@@ -1,43 +1,56 @@
 ---
-title:
+title: Advanced and scientific Python
 layout: default
 permalink: /
 ---
 
-A word of introduction, toto
+## Introduction
+
+This page lists a number of materials that I made available for Python classes and seminars. Depending on the overall programme of the course, you may be asked to look at some of those pages in a different order.
+
+Regardless the course you subscribed, the objective is always:
+
+- to **practice and learn more** about Python: you should know more about Python after the class  
+  (and "more" has a different meaning for everybody);
+- to be able to **reproduce all the examples from your own computer**.
+
+## Requirements
+
+- Bring your own computer (or try to borrow one if you don't have any)
+- Set up your environment before the class
 
 ## Resources
 
-|     | **Set up your environment**                                                 |
-| --- | --------------------------------------------------------------------------- |
-|     | [Set up a basic running environment](pages/setup.md)                        |
-|     | [Set up an environment following a requirement file](pages/dependencies.md) |
-|     | Understand the difference between pip and conda (expected)                  |
-|     | **Basic Python**                                                            |
-|     | Basic programming                                                           |
-|     | Basic algorithmic                                                           |
-|     | [Basic data structures](pages/basic.md)                                     |
-|     | [Advanced data structures](pages/structures.md)                             |
-|     | **Scientific Python**                                                       |
-|     | [Numpy exercices](pages/numpy.md)                                           |
-|     | Matplotlib exercices                                                        |
-|     | [Pandas exercices](pages/pandas.md)                                         |
-|     | [Grammar of graphics](python/altair)                                        |
-|     | **Objects, interfaces, protocols**                                          |
-|     | [List comprehensions](pages/comprehensions.md)                              |
-|     | [Iteration with pandas](pages/pandas_iterate.md)                            |
-|     | Python classes                                                              |
-|     | [The iteration protocol in classes](pages/pandas_oo.md)                     |
-|     | **Advanced topics**                                                         |
-|     | Modules and packages                                                        |
-|     | [Asynchronous programming](pages/asyncio.md)                                |
-|     | Building on a C API                                                         |
-|     | Speed up code with Rust                                                     |
-|     | **Applied problems**                                                        |
-|     | Compute the radius of Earth                                                 |
-|     | Exploring map projections                                                   |
-|     | [Solving puzzles](pages/puzzles.md)                                         |
-|     | Trajectography of the ISS                                                   |
+|     | **Set up your environment**                                                                   |
+| --- | --------------------------------------------------------------------------------------------- |
+|     | [Set up a basic running environment](pages/setup.md)                                          |
+|     | [Set up an environment following a requirement file](pages/requirement.md)                    |
+|     | [Understand the difference between pip and conda](pages/dependencies.md) (optional, advanced) |
+|     | **Basic Python**                                                                              |
+|     | Basic programming                                                                             |
+|     | Basic algorithms                                                                              |
+|     | [Basic data structures](pages/basic.md)                                                       |
+|     | [Advanced data structures](pages/structures.md)                                               |
+|     | **Scientific Python**                                                                         |
+|     | [Numpy exercices](pages/numpy.md)                                                             |
+|     | [Matplotlib exercices](pages/numpy.md)                                                        |
+|     | [Pandas exercices](pages/pandas.md)                                                           |
+|     | [Grammar of graphics](python/altair) (optional)                                               |
+|     | **Objects, interfaces, protocols**                                                            |
+|     | [List comprehensions](pages/comprehensions.md)                                                |
+|     | [Iteration with pandas](pages/pandas_iterate.md)                                              |
+|     | Python classes                                                                                |
+|     | [The iteration protocol in classes](pages/pandas_oo.md)                                       |
+|     | **Advanced topics**                                                                           |
+|     | Modules and packages                                                                          |
+|     | [Asynchronous programming](pages/asyncio.md) (optional)                                       |
+|     | Building on a C API                                                                           |
+|     | Speed up code with Rust                                                                       |
+|     | **Applied problems**                                                                          |
+|     | Compute the radius of Earth                                                                   |
+|     | Exploring map projections                                                                     |
+|     | [Solving puzzles](pages/puzzles.md)                                                           |
+|     | Trajectography of the ISS                                                                     |
 
 ## Disclaimer
 

@@ -1,0 +1,24 @@
+name: pyclass
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - numpy
+  - scipy
+  - matplotlib-base
+  - jupyter
+  - jupyterlab
+  - pandas
+  - scikit-learn
+  - requests
+  - tqdm
+  - cartopy
+  - shapely
+  - aiohttp
+  - rich
+  - networkx
+  - pygraphviz
+  - black
+  - nb_black
+  - mypy
+  - ruff

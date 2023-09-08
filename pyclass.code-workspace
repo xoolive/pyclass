@@ -24,7 +24,8 @@
       }
     },
     "[markdown]": {
-      "editor.wordWrap": "wordWrapColumn"
+      "editor.wordWrap": "bounded",
+      "editor.wordWrapColumn": 120
     },
 
     "files.exclude": {
