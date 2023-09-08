@@ -1,0 +1,77 @@
+---
+---
+
+@import url(https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css);
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+.alert {
+  position: unset;
+}
+
+@import "jekyll-theme-minimal";
+
+@media print, screen and (min-width: 800px) {
+  header {
+    position: fixed;
+    top: 0;
+    float: right;
+    width: 860px;
+    border-bottom: 1px solid #dee2e6 !important;
+    background-color: #fff !important;
+    padding: 0.5em 0em;
+  }
+
+  header .view {
+    font-style: normal;
+    font-size: 75%;
+    float: right;
+    margin-top: -3.5em;
+    margin-right: 10em;
+  }
+
+  header p {
+    font-style: italic;
+    font-size: 105%;
+    margin: -0.5em 0em 0.5em;
+  }
+
+  section {
+    width: 800px;
+  }
+
+  .wrapper {
+    padding-top: 80px;
+  }
+}
+
+header img {
+  max-width: 70px;
+  float: right;
+  display: block;
+  margin: -50px 0px;
+}
+
+footer {
+  display: none;
+}
+
+code pre {
+  font-size: 95%;
+}
+
+iframe,
+.giphy {
+  display: block;
+  margin: 1em auto;
+}

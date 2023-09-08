@@ -1,0 +1,12 @@
+title: Advanced and scientific Python
+email: git@xoolive.org
+description: >- # this means to ignore newlines until "baseurl:"
+  Materials to brush up your Python skills
+github_username: xoolive
+repository: xoolive/pyclass
+logo: assets/images/python.png
+theme: jekyll-theme-minimal
+
+exclude:
+  - .mypy_cache
+  - solutions

@@ -1,0 +1,47 @@
+{
+  "folders": [{ "path": "." }],
+  "settings": {
+    "editor.formatOnSave": true,
+
+    // Change that
+    "mypy-type-checker.importStrategy": "fromEnvironment",
+    "ruff.importStrategy": "fromEnvironment",
+
+    "black-formatter.args": ["-l", "80"],
+
+    // Settings for Windows
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    // "terminal.integrated.automationShell.windows": "c:\\windows\\system32\\cmd.exe",
+    // "python.condaPath": "c:\\Users\\...\\anaconda3\\Scripts\\conda.exe",
+    // "python.defaultInterpreterPath": "c:\\Users\\...\\anaconda3\\envs\\pyclass\\python.exe",
+
+    "[python]": {
+      "files.insertFinalNewline": true,
+      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.codeActionsOnSave": {
+        "source.organizeImports.ruff": true,
+        "source.fixAll.ruff": false
+      }
+    },
+    "[markdown]": {
+      "editor.wordWrap": "wordWrapColumn"
+    },
+
+    "files.exclude": {
+      "**/.git/": true,
+      "**/.ipynb_checkpoints/": true,
+      "**/.mypy_cache/": true,
+      "**/__pycache__/": true,
+      "**/.pytest_cache/": true,
+      "**/.ruff_cache/": true
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-python.python",
+      "ms-python.mypy-type-checker",
+      "ms-python.black-formatter",
+      "charliermarsh.ruff"
+    ]
+  }
+}
