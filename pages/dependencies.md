@@ -6,12 +6,6 @@ permalink: /dependencies
 
 ## Managing Python dependencies
 
-<div class="alert alert-warning">
-<b>Warning</b> &nbsp;&nbsp; If you are lost halfway, jump directly to the final section "Create a conda environment for the seminar".
-</div>
-
-<img class="giphy" src="https://media.giphy.com/media/g4jDE1JnpUNaw/giphy.webp"/>
-
 Python dependency management is a serious topic, as you want to be able to:
 
 - be able to reproduce code behaviour on your computer;
@@ -53,7 +47,7 @@ What is important here is to note that the order of import resolution will proce
 - directories set in the `PYTHONPATH` environment variables come next  
   (between `''` and `'/usr/lib/python38.zip'` in the current example);
 - in the system folders mentioned above;
-- a private `/home` folder with no required administrator rights, but **it may not appear on your side**.
+- a private home folder with no required administrator rights, but **it may not appear on your side**.
 
 <div class="alert alert-warning">
 <b>Warning</b> &nbsp;&nbsp; When external dynamic libraries (mostly written in C or C++) need to be loaded, other folders are watched, depending on your operating systems. The <code>LD_LIBRARY_PATH</code> variable lets you extend the list of folders to check.
@@ -106,3 +100,5 @@ In addition to this strict mechanism, it is considered good practice to work in 
 
 - If anything breaks one day, you can just remove the environment and create a new one;
 - You can have several Python versions for the same project, and segregate environments for different projects.
+
+[↑ Home](.)

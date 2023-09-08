@@ -62,4 +62,4 @@ We will be using Python 3.11 for the seminar, with a set of dependencies, includ
 
 Now you should be ready to proceed!
 
-[↑ Home](.) \| [Next >>](basic)
+[↑ Home](.) \| [Next >>](requirement)

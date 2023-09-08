@@ -27,8 +27,8 @@ Regardless the course you subscribed, the objective is always:
 |     | [Set up an environment following a requirement file](pages/requirement.md)                    |
 |     | [Understand the difference between pip and conda](pages/dependencies.md) (optional, advanced) |
 |     | **Basic Python**                                                                              |
-|     | Basic programming                                                                             |
-|     | Basic algorithms                                                                              |
+|     | _Basic programming (expected)_                                                                |
+|     | _Basic algorithms (expected)_                                                                 |
 |     | [Basic data structures](pages/basic.md)                                                       |
 |     | [Advanced data structures](pages/structures.md)                                               |
 |     | **Scientific Python**                                                                         |
@@ -39,13 +39,13 @@ Regardless the course you subscribed, the objective is always:
 |     | **Objects, interfaces, protocols**                                                            |
 |     | [List comprehensions](pages/comprehensions.md)                                                |
 |     | [Iteration with pandas](pages/pandas_iterate.md)                                              |
-|     | Python classes                                                                                |
+|     | _Python classes (expected)_                                                                   |
 |     | [The iteration protocol in classes](pages/pandas_oo.md)                                       |
 |     | **Advanced topics**                                                                           |
-|     | Modules and packages                                                                          |
+|     | _Modules and packages (expected)_                                                             |
 |     | [Asynchronous programming](pages/asyncio.md) (optional)                                       |
-|     | Building on a C API                                                                           |
-|     | Speed up code with Rust                                                                       |
+|     | _Building on a C API (expected)_                                                              |
+|     | _Speed up code with Rust (expected)_                                                          |
 |     | **Applied problems**                                                                          |
 |     | Compute the radius of Earth                                                                   |
 |     | Exploring map projections                                                                     |
