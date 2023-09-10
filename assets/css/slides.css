@@ -1,0 +1,68 @@
+@import url(https://fonts.googleapis.com/css?family=Fira%20Sans:regular,light);
+
+:root {
+  --r-main-font: Fira Sans, sans-serif;
+  --r-main-font-weight: 300;
+  --r-main-font-size: 26px;
+  --r-heading-font: Fira Sans, sans-serif;
+  --r-heading-line-height: 1.2;
+  --r-heading-letter-spacing: normal;
+  --r-heading-text-transform: uppercase;
+  --r-heading-text-shadow: none;
+  --r-heading-font-weight: 400;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2em;
+  --r-heading2-size: 1.45em;
+  --r-heading3-size: 1.25em;
+  --r-heading4-size: 1em;
+  --r-code-font: monospace;
+}
+.reveal {
+  width: 500px;
+  /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
+  padding-top: 50%;
+  margin: 1em auto;
+  font-weight: var(--r-main-font-weight);
+}
+
+.reveal p.subtitle {
+  font-size: 1.55em;
+  margin-bottom: 2em;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal img {
+  max-height: 500px;
+}
+
+/* Pandoc style */
+code {
+  white-space: pre-wrap;
+}
+span.smallcaps {
+  font-variant: small-caps;
+}
+span.underline {
+  text-decoration: underline;
+}
+div.column {
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+div.hanging-indent {
+  margin-left: 1.5em;
+  text-indent: -1.5em;
+}
+ul.task-list {
+  list-style: none;
+}
+.display.math {
+  display: block;
+  text-align: center;
+  margin: 0.5rem auto;
+}

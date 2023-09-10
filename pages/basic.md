@@ -4,8 +4,6 @@ title: Basic types and arithmetic
 permalink: /basic
 ---
 
-## Basic types and arithmetic
-
 > Code snippets may either be:
 >
 > - typesetted with syntax coloring, or

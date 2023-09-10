@@ -4,8 +4,6 @@ permalink: /numpy
 title: Numpy and Matplotlib
 ---
 
-## Numpy and Matplotlib
-
 This session is based on two Python files. When you open these files with Visual Studio Code, you will notice pseudo-cells prefixed as follows:
 
 ![vscode ipython](../assets/images/vscode_ipython.png)

@@ -16,6 +16,7 @@ dependencies:
   - shapely
   - aiohttp
   - rich
+  - vpython
   - networkx
   - pygraphviz
   - black

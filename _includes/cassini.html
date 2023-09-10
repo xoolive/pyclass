@@ -1,0 +1,366 @@
+<section id="lessentiel" class="slide level2">
+  <h2>L’essentiel</h2>
+  <ul>
+    <li><p>La rotondité de la Terre est connue depuis l’Antiquité ;</p></li>
+    <li><p>Ératosthène (200 av. J.-C.) mesurait le rayon de la Terre ;</p></li>
+    <li>
+      <p>
+        Les armées réclament des cartes de précision ;<br />
+        Les scientifiques ambitionnent des mesures de précision.
+      </p>
+    </li>
+    <li>
+      <p>
+        Utiliser Python pour calculer le rayon de la Terre à partir des mesures
+        des Cassini (XVIIIe siècle).
+      </p>
+    </li>
+  </ul>
+</section>
+<section>
+  <section id="historique-de-la-cartographie" class="title-slide slide level1">
+    <h1>Historique de la cartographie</h1>
+  </section>
+  <section id="eratosthène-de-cyrène" class="slide level2">
+    <h2>Eratosthène de Cyrène</h2>
+    <p><img data-src="labs/cassini/img/eratosthene.png" /></p>
+    <p>De nombreuses approximations, mais une première mesure !</p>
+  </section>
+  <section id="claude-ptolémée" class="slide level2">
+    <h2>Claude Ptolémée</h2>
+    <ul>
+      <li>Travaux dans la continuité de Ératosthène et Hipparque ;</li>
+      <li>
+        <em>Manuel de géographie</em> (<em>Geographike Hyphegesis</em>, 150)
+      </li>
+      <li>
+        Carte de l’écoumène (le monde habité) basée sur une grille de méridiens
+        et de parallèles ;
+      </li>
+      <li>Deux projections coniques pour retranscrire les cartes ;</li>
+    </ul>
+    <p>
+      Il n’y a pas de trace de ses cartes aujourd’hui ; on retrouve des
+      retranscriptions du XIe siècle à partir de ses descriptions.
+    </p>
+  </section>
+  <section id="le-monde-arabe" class="slide level2">
+    <h2>Le monde arabe</h2>
+    <ul>
+      <li>
+        <p>
+          En Europe, la dictature théologique annihile les découvertes
+          grecques ;
+        </p>
+      </li>
+      <li>
+        <p>
+          La <em>Géographie</em> de Ptolémée sert de modèle aux traités arabes
+          (période des <em>Abassides</em>, dès le VIIe siècle) ;
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Al-Idrīsī</strong> (XIIe siècle) centre sa perception du monde
+          sur la Méditerranée : l’Empire Byzantin, le Monde islamique, Occident
+          chrétien ;
+        </p>
+        <ul>
+          <li>
+            <em
+              >Livre du divertissement de celui qui désire découvrir le
+              monde</em
+            >
+            (<em>Kitāb nuzhat al-mushtāq fī ikhtirāq al-āfāq</em>) ;
+          </li>
+          <li>
+            Une exploration du monde qui présente de manière codifiée pays,
+            villes, routes, frontières, mers, fleuves et montagnes ;
+          </li>
+          <li>
+            Informations de nature géographiques, économiques, commerciales,
+            historiques et religieuses.
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section id="la-cartographie-marine" class="slide level2">
+    <h2>La cartographie marine</h2>
+    <ul>
+      <li>XIIIe siècle : croissance du commerce maritime ;</li>
+      <li>
+        Les <em>portulans</em> : cartographie des côtes et des ports, avec îles,
+        abris et amers ;
+      </li>
+      <li>Roses des vents, lignes de rhumbs (angles de route) ;</li>
+      <li>
+        Cartes basées sur le Nord magnétique (boussole), et plus sur le Nord
+        géographique (étoile polaire) ;
+      </li>
+      <li>
+        XVe siècle : découverte du Cap de Bonne-Espérance, découverte de
+        l’Amérique ; essor de la cartographie.
+      </li>
+    </ul>
+  </section>
+  <section id="la-triangulation" class="slide level2">
+    <h2>La triangulation</h2>
+    <ul>
+      <li>Une mesure des distances basée sur la loi des sinus;</li>
+    </ul>
+    <p>
+      <span class="math display"
+        >$$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} =\frac{c}{\sin
+        \gamma}$$</span
+      >
+    </p>
+    <ul>
+      <li>
+        <p>
+          À partir de la mesure d’une base et de deux angles, on calcule les
+          distances correspondantes.
+        </p>
+      </li>
+      <li>
+        <p>
+          Première triangulation par Snell pour la mesure d’un arc de méridien
+          entre Alkmaar et Berg op Zoom (1614)
+        </p>
+      </li>
+    </ul>
+  </section>
+  <section id="la-triangulation-1" class="slide level2">
+    <h2>La triangulation</h2>
+    <p><img data-src="labs/cassini/img/triangulation.png" /></p>
+  </section>
+  <section id="inō-tadataka-1745-1818" class="slide level2">
+    <h2>Inō Tadataka (1745 – 1818)</h2>
+    <p>
+      1800 : Le shogun autorise Inō a réaliser une carte du pays avec son propre
+      argent.
+    </p>
+    <p>
+      1818 : Mort de Inō Tadataka.<br />
+      Sa carte du Japon (échelle <span class="math inline">1 : 216000</span>)
+      est alors inachevée.
+    </p>
+    <p>3 736 jours de mesure, 34 913 kilomètres parcourus</p>
+    <p>
+      Le <em>Tadataka-zu</em> (Les cartes de Tadataka), dont beaucoup sont
+      précises à 1/1000e de degré, sont restées les cartes en usage au Japon
+      jusqu’en 1924.
+    </p>
+  </section>
+</section>
+<section>
+  <section id="la-carte-de-france-des-cassini" class="title-slide slide level1">
+    <h1>La carte de France des Cassini</h1>
+  </section>
+  <section id="les-grandes-ambitions-de-colbert" class="slide level2">
+    <h2>Les grandes ambitions de Colbert</h2>
+    <p>Jean-Baptiste Colbert (1619 – 1683), ministre de Louis XIV</p>
+    <p>1666 : <strong>Création de l’Académie des Sciences</strong></p>
+    <p>
+      <em
+        >« Faire des cartes géographiquement de la France plus exactes que
+        celles qui y ont était faites »</em
+      >
+      (1668)
+    </p>
+    <p>1669 : 1re triangulation de Paris à Amiens par l’abbé Picard</p>
+    <p>
+      1682 : Relevés de latitude et longitude des principales villes du littoral
+      (Picard et La Hire)
+    </p>
+    <p>
+      <em
+        >« Ces chers messieurs de l’Académie, avec leurs grands travaux m’ont
+        coûté une partie de mon royaume et m’ont pris plus de territoire que
+        tous mes ennemis réunis ! »</em
+      >
+      (1682)
+    </p>
+  </section>
+  <section id="un-grand-projet-de-cartographie" class="slide level2">
+    <h2>Un grand projet de cartographie</h2>
+    <p>
+      1681 : Picard présente un projet de châssis géographique qui doit
+      comporter une grande traverse triangulée qui irait de Dunkerque à
+      Perpignan.
+    </p>
+    <p>1682 : Mort de Picard.</p>
+    <p>
+      <em
+        >« Sa Majesté ordonne aux Mathématiciens de l’Académie des Sciences de
+        continuer l’entreprise et de prolonger vers le Septentrion et vers le
+        Midi jusques aux confins du Royaume, une ligne méridienne qui passât par
+        le milieu de l’Observatoire de Paris. »</em
+      >
+      (1683)
+    </p>
+    <p>Le travail sera terminé en 1718.</p>
+  </section>
+  <section id="quatre-générations-de-cassini" class="slide level2">
+    <h2>Quatre générations de Cassini</h2>
+    <ul>
+      <li>
+        <p>
+          <strong>Giovanni Domenico Cassini</strong> (Cassini Ier),<br />
+          Université de Bologne
+        </p>
+        <ul>
+          <li>
+            l’intensité de la pesanteur varie en fonction de la latitude ;
+          </li>
+          <li>1657 : méridienne dans la basilique San Petronio ;</li>
+          <li>1665 : grande tache rouge de Jupiter ;</li>
+          <li>détermine la vitesse de rotation de Jupiter, Mars et Vénus ;</li>
+          <li>1671, 1672, 1684 : quatre satellites de Jupiter ;</li>
+          <li>
+            1673 : mesure de la distance Terre–Soleil (parallaxe de Mars) ;
+          </li>
+          <li>1675 : division des anneaux de Saturne.</li>
+        </ul>
+      </li>
+    </ul>
+    <p>Reçu à l’Académie des Sciences en 1669</p>
+  </section>
+  <section id="la-terre-nest-plus-sphérique" class="slide level2">
+    <h2>La Terre n’est plus sphérique</h2>
+    <p>
+      Les théoriciens (Hooke, Newton, Huygens) prédisent une Terre aplatie aux
+      pôles mais les mesures de Cassini semblent indiquer le contraire.
+    </p>
+    <p>
+      L’Académie des Sciences prépare deux missions à des latitudes très
+      différentes :
+    </p>
+    <ul>
+      <li>au Pérou (1735) : Godin, Bouguer, La Condamine, Jussieu ;</li>
+      <li>en Laponie (1736) : Maupertuis, Clairaut, Celsius.</li>
+    </ul>
+    <p>
+      Le retour de l’expédition en Laponie (1737) confirme l’hypothèse d’une
+      Terre aplatie aux pôles.
+    </p>
+  </section>
+  <section id="la-méridienne-de-paris" class="slide level2">
+    <h2>La méridienne de Paris</h2>
+    <p>
+      1738 : Cassini III et La Caille entreprennent une nouvelle mesure de la
+      méridienne de Paris en six bases (Dunkerque, Villers-Bretonneux,
+      Montlhéry, Bourges, Rodez, Perpignan).
+    </p>
+    <p>
+      1744 : Le retour de l’expédition au Pérou permet de conclure à un
+      aplatissement de l’ordre de 1/200.
+    </p>
+    <p>
+      1791 : Le mètre est la dix-millionième partie de la moitié de méridien
+      terrestre.
+    </p>
+    <p>
+      1792–1798 : Nouvelle mesure de la méridienne, de Dunkerque à Montjuïc, par
+      Delambre et Méchain
+    </p>
+  </section>
+  <section
+    id="une-nouvelle-carte-de-france-entièrement-triangulée"
+    class="slide level2"
+  >
+    <h2>Une nouvelle carte de France entièrement triangulée</h2>
+    <p><img data-src="labs/cassini/img/cassini.png" /></p>
+  </section>
+</section>
+<section>
+  <section
+    id="césar-françois-cassini-de-thury"
+    class="title-slide slide level1"
+  >
+    <h1>César-François Cassini de Thury</h1>
+  </section>
+  <section
+    id="la-méridienne-de-lobservatoire-royal-de-paris"
+    class="slide level2"
+  >
+    <h2>La méridienne de l’Observatoire Royal de Paris</h2>
+    <p>
+      <img data-src="labs/cassini/img/couverture.jpg" />
+      <img data-src="labs/cassini/img/instrument.png" />
+    </p>
+  </section>
+  <section id="extraits-des-cartes-lobservatoire-de-paris" class="slide level2">
+    <h2>Extraits des cartes: l’Observatoire de Paris</h2>
+    <p><img data-src="labs/cassini/img/carte-villejuif-juvisy.png" /></p>
+  </section>
+  <section id="extraits-des-cartes-le-roussillon" class="slide level2">
+    <h2>Extraits des cartes: le Roussillon</h2>
+    <p><img data-src="labs/cassini/img/carte-roussillon.png" /></p>
+  </section>
+  <section id="les-premières-mesures" class="slide level2">
+    <h2>Les premières mesures</h2>
+    <p><img data-src="labs/cassini/img/premiers-triangles.png" /></p>
+  </section>
+  <section id="les-premières-mesures-1" class="slide level2">
+    <h2>Les premières mesures</h2>
+    <p><img data-src="labs/cassini/img/paris-amiens-01.png" /></p>
+    <p><img data-src="labs/cassini/img/paris-amiens-02.png" /></p>
+  </section>
+  <section id="les-premières-mesures-2" class="slide level2">
+    <h2>Les premières mesures</h2>
+    <p><img data-src="labs/cassini/img/paris-amiens-03.png" /></p>
+  </section>
+  <section id="les-mesures-de-latitude" class="slide level2">
+    <h2>Les mesures de latitude</h2>
+    <p><img data-src="labs/cassini/img/latitudes-01.png" /></p>
+    <p><img data-src="labs/cassini/img/latitudes-02.png" /></p>
+  </section>
+  <section id="les-mesures-de-latitude-1" class="slide level2">
+    <h2>Les mesures de latitude</h2>
+    <p><img data-src="labs/cassini/img/latitudes-03.png" /></p>
+    <p><img data-src="labs/cassini/img/latitudes-04.png" /></p>
+  </section>
+</section>
+<section>
+  <section id="données-utiles" class="title-slide slide level1">
+    <h1>Données utiles</h1>
+  </section>
+  <section id="les-unités-de-mesure" class="slide level2">
+    <h2>Les unités de mesure</h2>
+    <p>Conversions usuelles :</p>
+    <ul>
+      <li>1 toise fait 6 pieds ;</li>
+      <li>1 pied fait 12 pouces ;</li>
+      <li>1 pouce fait 12 lignes</li>
+    </ul>
+    <p>Échelle de la carte de Cassini :</p>
+    <ul>
+      <li>
+        1 ligne pour 100 toises (<span class="math inline">1 : 86400</span>)
+      </li>
+    </ul>
+    <p><em>1 toise du Châtelet fait 1,949 m</em></p>
+  </section>
+  <section id="les-données-dentrée" class="slide level2">
+    <h2>Les données d’entrée</h2>
+    <p>Longueur de la ligne de base :</p>
+    <ul>
+      <li>
+        de Villejuif à Juvisy : <span class="math inline">5748</span> toises ;
+      </li>
+      <li>
+        dans le Roussillon : <span class="math inline">7928</span> toises et 5
+        pieds.
+      </li>
+    </ul>
+    <p>
+      Les angles au sommet de tous les triangles sont recopiés dans le fichier
+      <code>triangles.txt</code>.
+    </p>
+    <p>
+      Les inclinaisons par rapport à la méridienne de Paris sont recopiées dans
+      le fichier <code>inclinaisons.txt</code>.
+    </p>
+  </section>
+</section>
