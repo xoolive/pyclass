@@ -27,6 +27,7 @@
       "editor.wordWrap": "bounded",
       "editor.wordWrapColumn": 120
     },
+    "markdownlint.ignore": ["MD033"],
 
     "files.exclude": {
       "**/.git/": true,

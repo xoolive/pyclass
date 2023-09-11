@@ -10,7 +10,7 @@ You will need to set up **by yourself** the following pieces:
 
 - [Visual Studio Code](https://code.visualstudio.com/). Open the `pyclass.code-workspace` file and click on the "Open Workspace" button.
 
-  ![](../assets/images/open-workspace.png)
+  ![Open workspace button](../assets/images/open-workspace.png)
 
 - an Anaconda distribution, from the [following link](https://www.anaconda.com/products/individual). In case the question arises, it is very likely that the best suited version for your needs is the 64 bits one. Anaconda is more than a Python distribution: it also provides additional dependencies you may need;
 
