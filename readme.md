@@ -14,6 +14,8 @@ Regardless the course you subscribed, the objective is always:
   (Keep in mind that "more" has a different meaning for everybody);
 - to be able to **run all the examples from your own computer**.
 
+A first experience in programming is preferable. This course does not focus on basics of programming (conditions, loops, functions). Basic structures are just a quick reminder.
+
 ## Requirements
 
 - Bring your own computer (or try to borrow one if you don't have any)
@@ -35,7 +37,7 @@ Regardless the course you subscribed, the objective is always:
 |              | [Numpy exercices](pages/numpy.md)                                          |
 |              | [Matplotlib exercices](pages/matplotlib.md)                                |
 |              | [Pandas exercices](pages/pandas.md)                                        |
-| _(optional)_ | [Grammar of graphics](python/altair)                                       |
+| _(optional)_ | [Grammar of graphics](/python/altair)                                      |
 |              | **Objects, interfaces, protocols**                                         |
 |              | [List comprehensions](pages/comprehensions.md)                             |
 |              | [Iteration with pandas](pages/pandas_iterate.md)                           |
