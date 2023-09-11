@@ -19,6 +19,17 @@ dependencies:
   - vpython
   - networkx
   - pygraphviz
+  # extended (labs)
+  - descartes
+  - fiona
+  - skyfield
+  - zeep
+  - traffic
+  - flask
+  - flask_cors
+  - textual
+  - waitress
+  # style
   - black
   - nb_black
   - ruff

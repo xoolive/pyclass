@@ -1,0 +1,11 @@
+_minted-python/
+
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.nav
+*.snm
+*.out
+*.toc
+*.vrb
