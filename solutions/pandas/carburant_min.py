@@ -1,0 +1,1 @@
+carburant['prix'].min()

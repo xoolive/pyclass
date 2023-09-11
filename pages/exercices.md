@@ -1,164 +1,116 @@
 ---
-title: Exercices de programmation
-documentclass: tufte-handout
-classoption: twoside
-lang: fr
-mainfont: Linux Libertine
-mathfont: Asana Math
-header-includes:
-  - \usepackage{graphicx}
-  - \usepackage{marvosym}
-  - \usepackage{tikz}
-  - \setmonofont[Scale=0.8]{Fira Mono}
-  - \renewcommand\allcapsspacing[1]{{\addfontfeature{LetterSpace=15}#1}}
-  - \renewcommand\smallcapsspacing[1]{{\addfontfeature{LetterSpace=10}#1}}
-  - \usepackage{xpatch}
-  - \xapptocmd\ttfamily{\XeTeXinterchartokenstate=0 }{}{}
+title: Basic programming
 permalink: /exercices
 layout: default
 ---
 
-## Exercice nº1
+1. Write the logical expression that is True when $a \in [10, 20]$.
 
-Écrire l'expression logique qui est vraie quand $a \in [10, 20]$.
+   ```python
+   a = 12
+   ```
 
-On pourra partir du code Python suivant:
+2. Write a program which computes the volume of a cone given a radius and a height.
+   Use the formula $V = \dfrac{\pi r^2 h}{3}$
 
-```python
-a = 12
-```
+   ```python
+   import math  # access to math.pi
 
-## Exercice nº2
+   r = 1
+   h = 4
+   ```
 
-Écrire un programme qui à partir d'un rayon et d'une hauteur calcule le volume
-d'un cône droit. On rappelle la formule $V = \dfrac{\pi r^2 h}{3}$
+3. Given a variable 's' containing a string, write an expression that, using this variable, constructs the same string with the first letter of each word capitalized, surrounded by '=' characters, all within a width of 60 characters.
+   The [official documentation](https://docs.python.org/3/library/string.html) could be of use
 
-On pourra partir du code Python suivant:
+   ```python
+   s = "Dark side of the moon"
 
-```python
-import math  # accès à math.pi
+   # Expected result
+   # '===================Dark Side Of The Moon===================='
+   ```
 
-r = 1
-h = 4
-```
+4. Write a function that, for an integer between 1 and 3999, returns its representation in the form of a Roman numeral.
 
-## Exercice nº3
+   | `I` | `V` | `X` | `L` | `C` | `D` | `M`  |
+   | :-: | :-: | :-: | :-: | :-: | :-: | :--: |
+   |  1  |  5  | 10  | 50  | 100 | 500 | 1000 |
 
-À partir d'une variable s contenant une chaîne de caractères, écrire
-l'expression permettant à partir de cette variable de construire cette même
-chaîne avec la première lettre de chaque mot en majuscule, encadrée de
-caractères `=`, l'ensemble sur une largeur de 60 caractères.
+   ```python
+   # Python allows you to annotate arguments and return values of a function
+   # with  syntactically correct elements. Those are optional, and ignored
+   # during the execution. We use them to help documenting functions. Some extra
+   # tools can perform consistency checking based on annotations.
 
-La [documentation officielle](https://docs.python.org/3/library/string.html) pourrait être utile.
+   def roman_numeral(n: int) -> str:
+       pass
+   ```
 
-```python
-s = "Dark side of the moon"
+5. The _Monge shuffle_ of a deck of cards numbered from 2 to 2n consists of starting a new deck with the card 1, placing card 2 above this new deck, then card 3 below the new deck, and so on, placing even-numbered cards above the new deck and odd-numbered cards below.
 
-# Produire la chaîne de caractères suivante
-# '===================Dark Side Of The Moon===================='
+   Write a function that returns the initial deck and the shuffled deck
 
-```
+   ```python
+   # Reference:
+   # https://docs.python.org/3/tutorial/datastructures.html?highlight=list
 
-## Exercice nº4
+   def monge(n: int):
+       pass
+   ```
 
-Écrire une fonction qui pour un entier entre 1 et 3999 retourne sa représentation sous forme de nombre romain.
+6. Consider a list containing tuples of values (name, mass, volume), where 'name' is the name of a chemical element, 'mass' is a floating-point value in grams, and 'volume' is a floating-point value in cm^3.
 
-| `I` | `V` | `X` | `L` | `C` | `D` | `M`  |
-| :-: | :-: | :-: | :-: | :-: | :-: | :--: |
-|  1  |  5  | 10  | 50  | 100 | 500 | 1000 |
+   ```python
+   lst: list[tuple[str, float, float]] = [
+       ("Arsenic", 17.8464, 3.12),
+       ("Aluminium", 16.767, 6.21),
+       ("Gold", 239320, 12400),
+   ]
+   ```
 
-```python
-# Note: Python 3 permet d'*annoter* les arguments et le retour d'une fonction
-# avec des éléments de syntaxe valide. Ces éléments sont *facultatifs*, ignorés
-# par le langage. En général, on les utilise pour préciser l'interface des
-# fonctions.
-# Dans l'exemple suivant, Python comprend "def romain(n):" mais le programmeur
-# sait que la fonction prend un entier et retourne une chaîne de caractères.
+   Save the data from 'lst' into a text file where each line corresponds to an element, with the format: `name = density g/cm3`
 
-def romain(n: int) -> str:
-    pass
-```
+   For example:
 
-## Exercice nº5
+   ```text
+   Arsenic = 5.72 g/cm3
+   ```
 
-Le _mélange de Monge_ d'un paquet de cartes numérotées de 2 à 2n consiste à
-démarrer un nouveau paquet avec la carte 1, à placer la carte 2 au-dessus de ce
-nouveau paquet, puis la carte 3 au-dessous du nouveau paquet et ainsi de suite
-en plaçant les cartes paires au dessus du nouveau paquet et les cartes impaires
-au dessous.
+   Then, write a function that takes as input a volume and, for each of the elements in the `elements.txt` file, displays the mass of a sample of that element for the given volume, following the template:
 
-Écrire une fonction qui retourne le paquet initial et le paquet mélangé.
+   ```text
+   Arsenic: 28.60 g
+   Aluminium: 13.50 g
+   Gold: 96.50 g
+   ```
 
-```python
-# Référence:
-# https://docs.python.org/3/tutorial/datastructures.html?highlight=list
+   ```python
+   # Write a file
+   from pathlib import Path
 
-def monge(n: int):
-    pass
-```
+   with Path("elements.txt").open("w") as fh:
+       pass
 
-## Exercice nº6
+   # Read a file
+   def compute_mass(volume: float) -> None:
+       with Path("elements.txt").open("r") as fh:
+           pass
+   ```
 
-Soit une liste contenant des tuples de valeurs (nom, masse, volume), où nom est
-le nom d'un élément chimique, masse est une valeur flottante en grammes et
-volume une valeur flottante en cm$^3$
+7. Write a program that approximates the mathematical constant $e$ for a sufficiently large value of $n$ using the following formula:
 
-```python
-lst: list[tuple[str, float, float]] = [
-    ("Arsenic", 17.8464, 3.12),
-    ("Aluminium", 16.767, 6.21),
-    ("Or", 239320, 12400),
-]
-```
+   $$e = \sum_{i=0}^{n} \dfrac{1}{i!}$$
 
-Enregistrer les données de lst dans un fichier texte dont chaque ligne
-correspond à un élément, avec le format: `nom = masse volumique g/cm3`
+   ```python
+   def compute_e(n: int) -> float:
+       pass
 
-Par exemple:
+   # Check the precision
+   import math
+   (math.e - calcule_e(15)) / math.e
+   ```
 
-```text
-Arsenic = 5.72 g/cm3
-```
+8. Write a program that checks if a given string is a palindrome (reads the same forwards and backwards).
 
-Puis écrire une fonction qui prend en entrée un volume et affiche pour chacun
-des éléments du fichier `elements.txt` la masse d'un échantillon de cet élément
-pour le volume donné, sur le modèle:
-
-```text
-Arsenic: 28.60 g
-Aluminium: 13.50 g
-Or: 96.50 g
-```
-
-```python
-# Écriture du fichier
-from pathlib import Path
-
-with Path("elements.txt").open("w") as fh:
-    pass
-
-# Lecture du fichier
-def calcule_masse(volume: float) -> None:
-    with Path("elements.txt").open("r") as fh:
-        pass
-```
-
-## Exercice nº7
-
-Écrire un programme qui approche la valeur de la constante mathématique $e$ pour
-$n$ assez grand en utilisant la formule suivante:
-
-$$e = \sum_{i=0}^{n} \dfrac{1}{i!}$$
-
-```python
-def calcule_e(n: int) -> float:
-    pass
-
-# Vérifier la précision du calcul
-import math
-(math.e - calcule_e(15)) / math.e
-```
-
----
-
-[Lien vers les corrections](corrections)
+   Then, write another program to check if two words are anagrams (the same letters in a different order).  
+   Find all the anagrams in a text file.

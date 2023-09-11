@@ -33,7 +33,7 @@ Regardless the course you subscribed, the objective is always:
 |              | [Advanced data structures](pages/structures.md)                            |
 |              | **Scientific Python**                                                      |
 |              | [Numpy exercices](pages/numpy.md)                                          |
-|              | [Matplotlib exercices](pages/numpy.md)                                     |
+|              | [Matplotlib exercices](pages/matplotlib.md)                                |
 |              | [Pandas exercices](pages/pandas.md)                                        |
 | _(optional)_ | [Grammar of graphics](python/altair)                                       |
 |              | **Objects, interfaces, protocols**                                         |

@@ -21,5 +21,7 @@ dependencies:
   - pygraphviz
   - black
   - nb_black
-  - mypy
   - ruff
+  - mypy
+  # stubs for typing
+  - pandas-stubs

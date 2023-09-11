@@ -3,8 +3,8 @@
   "settings": {
     "editor.formatOnSave": true,
 
-    // Change that
     "mypy-type-checker.importStrategy": "fromEnvironment",
+    "mypy-type-checker.args": ["--ignore-missing-import"],
     "ruff.importStrategy": "fromEnvironment",
 
     "black-formatter.args": ["-l", "80"],

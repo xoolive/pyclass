@@ -5,9 +5,8 @@
 # visualisations.
 # %%
 
-import numpy as np
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 # The `plot` instruction takes a list of x-coordinates and a list of
 # y-coordinates.
@@ -38,7 +37,7 @@ plt.ylabel("Money")
 t = np.arange(0.0, 5.0, 0.2)
 
 # red dashes, blue squares and green triangles
-plt.plot(t, t, "r--", t, t ** 2, "bs", t, t ** 3, "g^")
+plt.plot(t, t, "r--", t, t**2, "bs", t, t**3, "g^")
 
 
 # Lastly, note that it is possible to display several graphs side by side.
@@ -61,15 +60,6 @@ ax[1, 1].plot(t, np.sqrt(t), "#2d882d")
 # ```python
 # fig, ax = plt.subplots()
 # ```
-
-# ## Exercice #1 (solutions/numpy/trace_cos.py)
-# Trace the graph of function $t \mapsto e^{-t} \cdot \cos(2\,\pi\,t)$
-# for $t\in[0,5]$
-# %%
-
-# ## Exercice #2 (solutions/numpy/trace_sin.py)
-# Consider the polar coordinate curve defined by $r = \sin(5\,\theta)$, compute
-# the x- and y- coordinates using Numpy functions, then plot the curve.
 # %%
 
 

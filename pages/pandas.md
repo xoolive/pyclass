@@ -8,9 +8,7 @@ permalink: /pandas
 <b>Note</b> &nbsp;&nbsp; At the moment, this resource is only available in French.
 </div>
 
-## Introduction à Pandas
-
-Cette partie en français est disponible sous forme de notebook (avec les solutions), dans le dossier `notebooks/`.
+Cette partie en français est disponible sous forme de notebook (avec les solutions), dans le dossier `python/`.
 
 Vous pouvez ouvrir le notebook:
 
