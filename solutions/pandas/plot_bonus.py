@@ -1,7 +1,7 @@
 # Bonus: On affiche la même carte pour tous les types de carburant...
 
-def plot_map(X, carburant="SP98"):
 
+def plot_map(X, carburant="SP98"):
     fig = plt.figure(figsize=(15, 10))
     ax = plt.axes(projection=lambert93)
 
@@ -24,11 +24,10 @@ def plot_map(X, carburant="SP98"):
 
     mappable = plt.cm.ScalarMappable(norm, colormap)
     mappable.set_array(X)
-    fig.colorbar(mappable, label="Prix moyen du {}".format(carburant))
+    fig.colorbar(mappable, ax=ax, label="Prix moyen du {}".format(carburant))
 
 
 for dept, data in carburant.groupby("type"):
-
     X = (
         data.merge(stations, on="id")
         .groupby(["departement", "week"])["prix"]

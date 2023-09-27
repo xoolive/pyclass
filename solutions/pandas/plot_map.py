@@ -22,4 +22,4 @@ ax.set_ylim((6100000, 7150000))
 
 mappable = plt.cm.ScalarMappable(norm, colormap)
 mappable.set_array(X)
-fig.colorbar(mappable, label="Prix moyen du SP98")
+fig.colorbar(mappable, ax=ax, label="Prix moyen du SP98")
