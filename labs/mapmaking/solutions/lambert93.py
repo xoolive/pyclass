@@ -1,13 +1,14 @@
 import fiona
 import matplotlib.pyplot as plt
 import numpy as np
-from descartes import PolygonPatch
 from shapely.geometry import MultiPolygon, Polygon, shape
+from shapely.plotting import patch_from_polygon
 
 # parameters for Lambert93 projection
 [lon0, lat0, lat1, lat2] = [np.radians(x) for x in [3, 46.5, 44, 49]]
 x0, y0 = 700000, 6600000
 r = 6371000
+
 
 # Lambert conformal conic projection (from spherical coordinates)
 def sph2lcc(lon, lat):
@@ -25,7 +26,6 @@ def sph2lcc(lon, lat):
 
 
 def europe_map(projection, shapefile_path):
-
     items = [p for p in fiona.open(shapefile_path)]
     polygons = []
 
@@ -65,7 +65,6 @@ def europe_map(projection, shapefile_path):
 
 
 def france_map(projection, shapefile_path):
-
     items = [p for p in fiona.open(shapefile_path)]
     polygons = []
 
@@ -105,7 +104,7 @@ def graticule(ax, longitude, latitude, projection, step=5):
 fig, ax = plt.subplots(figsize=(7, 7))
 
 for p in europe_map(sph2lcc, shapefile_path=shapefile_path):
-    ax.add_patch(PolygonPatch(p[0], alpha=0.5, zorder=2, **p[1]))
+    ax.add_patch(patch_from_polygon(p[0], alpha=0.5, zorder=2, **p[1]))
 
 # Graticule
 graticule(ax, (-10, 15), (30, 60), sph2lcc)

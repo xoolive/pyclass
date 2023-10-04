@@ -20,8 +20,6 @@ dependencies:
   - networkx
   - pygraphviz
   # extended (labs)
-  - descartes
-  - fiona
   - skyfield
   - zeep
   - traffic

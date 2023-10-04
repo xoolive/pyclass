@@ -1,8 +1,8 @@
 import fiona
 import matplotlib.pyplot as plt
 import numpy as np
-from descartes import PolygonPatch
 from shapely.geometry import MultiPolygon, Polygon, shape
+from shapely.plotting import patch_from_polygon
 
 
 def sph2merc(lon: float, lat: float) -> tuple[float, float]:
@@ -12,7 +12,6 @@ def sph2merc(lon: float, lat: float) -> tuple[float, float]:
 
 
 def world_map(projection, shapefile_path):
-
     items = [p for p in fiona.open(shapefile_path)]
     shapes = [
         shape(i["geometry"])
@@ -37,7 +36,7 @@ fig, ax = plt.subplots(figsize=(20, 10))
 
 for p in world_map(sph2merc, shapefile_path=shapefile_path):
     ax.add_patch(
-        PolygonPatch(p, fc="#6699cc", ec="#6699cc", alpha=0.5, zorder=2)
+        patch_from_polygon(p, fc="#6699cc", ec="#6699cc", alpha=0.5, zorder=2)
     )
 
 # Finitions
