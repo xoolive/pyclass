@@ -114,3 +114,5 @@ layout: default
 
    Then, write another program to check if two words are anagrams (the same letters in a different order).  
    Find all the anagrams in a text file.
+
+9. For a given list of integers, find the longest sublist of sorted elements.
