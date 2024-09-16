@@ -26,17 +26,19 @@ class NQueens(Puzzle):
         n = len(self.pos)
         return "\n".join(
             [
-                " ".join("♛" if j == self.pos[i] else "-" for j in range(n))
+                " ".join("♛" if i < n and j == self.pos[i] else "-" for j in range(8))
                 for i in range(n)
             ]
         )
+
+    def canonical(self):
+        return repr(self.pos)
 
     def __iter__(self):
         i = len(self.pos)
         for qi in range(8):
             if all(
-                qi != qj and abs(qi - qj) != abs(i - j)
-                for j, qj in enumerate(self.pos)
+                qi != qj and abs(qi - qj) != abs(i - j) for j, qj in enumerate(self.pos)
             ):
                 yield NQueens(tuple([*self.pos, qi]))
 

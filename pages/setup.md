@@ -12,31 +12,26 @@ You will need to set up **by yourself** the following pieces:
 
   ![Open workspace button](../assets/images/open-workspace.png)
 
-- an Anaconda distribution, from the [following link](https://www.anaconda.com/products/individual). In case the question arises, it is very likely that the best suited version for your needs is the 64 bits one. Anaconda is more than a Python distribution: it also provides additional dependencies you may need;
+- the `pixi` tool: you will get installation instructions [here](https://pixi.sh/latest/). For Windows, follow the "PowerShell" instructions (look for a PowerShell on your system, it's there I promise.)  
+  For those who already know a little, `pixi` is a minimal tool providing environments similar to Anaconda, but we will not use Anaconda;
 
-- understand that you will need a terminal for cloning learning materials, installing dependencies and more. You are required to not run the Anaconda navigator. **(⇐ Please read again)**.
+- understand that you will need a terminal for cloning learning materials, installing dependencies and more.
 
   - MacOS and Linux users should be familiar with their usual terminal application;
   - MacOS users will probably need to install common tools and dependencies with [brew](https://brew.sh/);
-  - Windows users should find out how to run the **Anaconda prompt**.
+  - Windows users should find out how to run their PowerShell.
 
   You are expected to be familiar with the most basic shell commands to list a directory, create and move files, change permissions, etc.
-
-  Please set up the following settings:
-
-  ```sh
-  conda config --add channels conda-forge
-  ```
 
 - the `git` (or `git.exe` for Windows users) program, for version control. Using Git falls out of scope of this seminar, but you are **strongly encouraged** to become proficient with it. You may find resources on [GitHub Learning Lab](https://lab.github.com/), e.g. the following course for [first-timers](https://lab.github.com/lmachens/git-and-github-first-timers).
 
   Try running `git --version`. If necessary, install `git`:
 
-  | Operating system | Installation command   |
-  | ---------------- | ---------------------- |
-  | Windows          | `conda install git`    |
-  | MacOS            | `brew install git`     |
-  | Linux (Ubuntu)   | `sudo apt install git` |
+  | Operating system  | Installation command      |
+  | ----------------- | ------------------------- |
+  | Linux (Ubuntu)    | `sudo apt install git`    |
+  | MacOS (preferred) | `brew install git`        |
+  | Windows or MacOS  | `pixi global install git` |
 
 - clone the resources for the seminar:
 

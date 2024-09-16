@@ -1,0 +1,36 @@
+[project]
+name = "pyclass"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["Xavier Olive <git@xoolive.org>"]
+channels = ["conda-forge"]
+platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
+
+[dependencies]
+python = ">=3.11"
+numpy = "*"
+scipy = "*"
+matplotlib-base = "*"
+jupyter = "*"
+jupyterlab = "*"
+pandas = "*"
+scikit-learn = "*"
+requests = "*"
+tqdm = "*"
+cartopy = "*"
+shapely = "*"
+aiohttp = "*"
+rich = "*"
+vpython = "*"
+networkx = "*"
+pygraphviz = "*"
+skyfield = "*"
+zeep = "*"
+traffic = "*"
+flask = "*"
+flask_cors = "*"
+textual = "*"
+waitress = "*"
+ruff = "*"
+mypy = "*"
+pandas-stubs = "*"

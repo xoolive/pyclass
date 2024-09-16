@@ -1,33 +1,29 @@
 {
   "folders": [{ "path": "." }],
   "settings": {
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+
     "editor.formatOnSave": true,
-
-    "mypy-type-checker.importStrategy": "fromEnvironment",
-    "mypy-type-checker.args": ["--ignore-missing-import"],
+    "mypy.extraArguments": ["--ignore-missing-import"],
     "ruff.importStrategy": "fromEnvironment",
-
-    "black-formatter.args": ["-l", "80"],
-
-    // Settings for Windows
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    // "terminal.integrated.automationShell.windows": "c:\\windows\\system32\\cmd.exe",
-    // "python.condaPath": "c:\\Users\\...\\anaconda3\\Scripts\\conda.exe",
-    // "python.defaultInterpreterPath": "c:\\Users\\...\\anaconda3\\envs\\pyclass\\python.exe",
 
     "[python]": {
       "files.insertFinalNewline": true,
-      "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.defaultFormatter": "charliermarsh.ruff",
       "editor.codeActionsOnSave": {
-        "source.organizeImports.ruff": true,
-        "source.fixAll.ruff": false
+        "source.organizeImports.ruff": "explicit",
+        "source.fixAll.ruff": "never"
       }
     },
+
+    // Settings for Windows
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+
     "[markdown]": {
       "editor.wordWrap": "bounded",
       "editor.wordWrapColumn": 120
     },
-    "markdownlint.ignore": ["MD033"],
 
     "files.exclude": {
       "**/.git/": true,
@@ -42,7 +38,6 @@
     "recommendations": [
       "ms-python.python",
       "ms-python.mypy-type-checker",
-      "ms-python.black-formatter",
       "charliermarsh.ruff"
     ]
   }

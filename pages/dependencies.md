@@ -15,7 +15,7 @@ During your classes (and future professional life), your most common need will b
 
 ### The `import` instruction
 
-The `import` instruction allows you to access code located in separated files (_modules_). A bundled aborescence of modules is called a _package_.
+The `import` instruction allows you to access code located in separated files (_modules_). A bundled arborescence of modules is called a _package_.
 
 When you type `import foo`, the Python interpreter will look for:
 
@@ -31,11 +31,11 @@ Try running in your Python interpreter:
 >>> sys.path
 [
     '',
-    '/usr/lib/python38.zip',
-    '/usr/lib/python3.8',
-    '/usr/lib/python3.8/lib-dynload',
-    '/home/xo/.local/lib/python3.8/site-packages',
-    '/usr/local/lib/python3.8/dist-packages',
+    '/usr/lib/python312.zip',
+    '/usr/lib/python3.12',
+    '/usr/lib/python3.12/lib-dynload',
+    '/home/xo/.local/lib/python3.12/site-packages',
+    '/usr/local/lib/python3.12/dist-packages',
     '/usr/lib/python3/dist-packages'
 ]
 ```
@@ -45,7 +45,7 @@ What is important here is to note that the order of import resolution will proce
 
 - first look at the current directory;
 - directories set in the `PYTHONPATH` environment variables come next  
-  (between `''` and `'/usr/lib/python38.zip'` in the current example);
+  (between `''` and `'/usr/lib/python312.zip'` in the current example);
 - in the system folders mentioned above;
 - a private home folder with no required administrator rights, but **it may not appear on your side**.
 
@@ -62,7 +62,7 @@ Dealing with dependencies in custom folders does not scale well. Some people lik
 - local folders, most of the time with `pip install .` ;
 - remote servers, like [https://pypi.org/](https://pypi.org/), with commands like `pip install pandas`.
 
-`pip` installs packages in system folders first, but you can use the `--user` option to install in local folders. Remember `'/home/xo/.local/lib/python3.8/site-packages'`. It is important to ensure that such folder where `pip` installs packages is part of your Python `sys.path` list of folders, but `pip` will warn you if that's not the case.
+`pip` installs packages in system folders first, but you can use the `--user` option to install in local folders. Remember `'/home/xo/.local/lib/python3.12/site-packages'`. It is important to ensure that such folder where `pip` installs packages is part of your Python `sys.path` list of folders, but `pip` will warn you if that's not the case.
 
 `pip` installs only Python dependencies. Publishing a package on PyPI (out of the scope of this seminar) is pretty flexible. Also, it does not ensure the global consistency of the Python ecosystem you have installed on your computer, which can become problematic when you install, update, deinstall, reinstall a lot of packages. **It is very likely that you will reach a point where your Python is "broken" because of dependency requirement conflicts.**
 
@@ -100,5 +100,9 @@ In addition to this strict mechanism, it is considered good practice to work in 
 
 - If anything breaks one day, you can just remove the environment and create a new one;
 - You can have several Python versions for the same project, and segregate environments for different projects.
+
+### Pixi
+
+Pixi is a tool that simplifies and makes conda environment management faster and more efficient.
 
 [↑ Home](.)
