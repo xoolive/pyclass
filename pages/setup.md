@@ -47,4 +47,8 @@ You will need to set up **by yourself** the following pieces:
   git pull --rebase --autostash
   ```
 
+<div class="alert alert-warning">
+<b>Last step</b> In order to create your environment, you have to run Python for the first time, using the command <code>pixi run python</code> (in the folder of your project)
+</div>
+
 [↑ Home](.) \| [Next >>](dependencies)
