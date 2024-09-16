@@ -48,7 +48,7 @@ You will need to set up **by yourself** the following pieces:
   ```
 
 <div class="alert alert-warning">
-<b>Last step</b> In order to create your environment, you have to run Python for the first time, using the command <code>pixi run python</code> (in the folder of your project)
+<b>Last step</b> In order to create your environment, you have to run Python for the first time, using the following command:<br/> <code>pixi run python</code> (in the folder of your project)
 </div>
 
 [↑ Home](.) \| [Next >>](dependencies)
