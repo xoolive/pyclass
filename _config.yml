@@ -9,4 +9,5 @@ theme: jekyll-theme-minimal
 
 exclude:
   - .mypy_cache
+  - .pixi
   - solutions

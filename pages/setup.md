@@ -6,14 +6,22 @@ permalink: /setup
 
 ## Setting up your environment
 
+<div class="alert alert-danger">
+Please follow <b>every single step</b> below.<br/> If you miss a step, things will only work partially.
+</div>
+
 You will need to set up **by yourself** the following pieces:
 
-- [Visual Studio Code](https://code.visualstudio.com/). Open the `pyclass.code-workspace` file and click on the "Open Workspace" button.
+- Download and install [Visual Studio Code](https://code.visualstudio.com/).  
+  If you already have Visual Studio Code, install the latest version.
 
-  ![Open workspace button](../assets/images/open-workspace.png)
-
-- the `pixi` tool: you will get installation instructions [here](https://pixi.sh/latest/). For Windows, follow the "PowerShell" instructions (look for a PowerShell on your system, it's there I promise.)  
+- the `pixi` tool: you will get installation instructions [here](https://pixi.sh/latest/).  
+  For Windows, follow the "PowerShell" instructions (look for a PowerShell on your system, it's there I promise.)  
   For those who already know a little, `pixi` is a minimal tool providing environments similar to Anaconda, but we will not use Anaconda;
+
+<div class="alert alert-warning">
+<b>Warning</b> If you already have anaconda, and see when you open the terminal your line starting with <code>(base)</code>:<br/> <code>conda config --set auto_activate_base false</code> 
+</div>
 
 - understand that you will need a terminal for cloning learning materials, installing dependencies and more.
 
@@ -23,7 +31,9 @@ You will need to set up **by yourself** the following pieces:
 
   You are expected to be familiar with the most basic shell commands to list a directory, create and move files, change permissions, etc.
 
-- the `git` (or `git.exe` for Windows users) program, for version control. Using Git falls out of scope of this seminar, but you are **strongly encouraged** to become proficient with it. You may find resources on [GitHub Learning Lab](https://lab.github.com/), e.g. the following course for [first-timers](https://lab.github.com/lmachens/git-and-github-first-timers).
+- the `git` (or `git.exe` for Windows users) program, for version control.  
+  Using Git falls out of scope of this seminar, but you are **strongly encouraged** to become proficient with it.  
+  You may find resources on [GitHub Learning Lab](https://lab.github.com/), e.g. the following course for [first-timers](https://lab.github.com/lmachens/git-and-github-first-timers).
 
   Try running `git --version`. If necessary, install `git`:
 
@@ -47,8 +57,40 @@ You will need to set up **by yourself** the following pieces:
   git pull --rebase --autostash
   ```
 
-<div class="alert alert-warning">
-<b>Last step</b> In order to create your environment, you have to run Python for the first time, using the following command:<br/> <code>pixi run python</code> (in the folder of your project)
-</div>
+- With Visual Studio Code, open the `pyclass.code-workspace` file:
+
+![Open workspace button](../assets/images/open-workspace-from-file.png)
+
+- If you opened the file instead of the workspace, click here:
+
+![Open workspace button](../assets/images/open-workspace.png)
+
+- Accept the suggestions to install extensions (and to update Visual Studio Code)
+
+![Install extensions](../assets/images/install_extensions.png)
+
+- Initialize the pixi interpreter. Open a terminal (Terminal > New Terminal), then
+
+  ```sh
+  pixi run python
+  ```
+
+- Open a Python file, e.g. `python/numpy_demo.py`, wait and look at the Python version down:
+
+![Python version](../assets/images/python_version.png)
+
+- Select the pixi interpreter:
+
+  ![Select interpreter](../assets/images/select_interpreter.png)
+
+  If you can't see it, refresh the interpreter list:
+
+  ![Refresh interpreter](../assets/images/refresh_interpreter.png)
+
+- Confirm you have the new Python version:
+
+![Python version](../assets/images/python_version_after.png)
+
+- Confirm that you have the same red colour on your Visual Studio Code on your side.
 
 [↑ Home](.) \| [Next >>](dependencies)
