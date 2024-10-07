@@ -1,0 +1,12 @@
+{
+    "persons": [
+        {
+            "city": "Seattle",
+            "name": "Brian"
+        },
+        {
+            "city": "Amsterdam",
+            "name": "David"
+        }
+    ]
+}
