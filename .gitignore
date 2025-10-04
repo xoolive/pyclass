@@ -1,4 +1,10 @@
-# pixi environments
 .pixi
 *.egg-info
 
+.git*
+
+_minted
+_minted-python
+
+.synctex.gz
+.xdv

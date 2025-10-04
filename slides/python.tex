@@ -3,8 +3,9 @@
 \usepackage{amssymb,amsmath}
 \usepackage{fixltx2e} % provides \textsubscript
 \usepackage{mathspec}
-\defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
-\usetheme{utopia}
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+\setmonofont[Scale=0.75]{Inconsolata}
+\usetheme{metropolis}
 % use microtype if available
 \IfFileExists{microtype.sty}{%
 \usepackage{microtype}
@@ -14,6 +15,8 @@
 \usepackage{polyglossia}
 \setmainlanguage[]{french}
 \usepackage{color}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
 
 % Prevent slide breaks in the middle of a paragraph:
 \widowpenalties 1 10000
@@ -42,13 +45,15 @@
 \title{Une introduction à Python}
 \subtitle{voire un peu plus\dots}
 \author{Xavier Olive, ONERA}
-\date{version 0.999}
+\date{version 0.9999}
 \institute{\ccbysa}
 
 \def\interlude{
-\plain{Interlude\\[1em]
+\begin{frame}[standout]
+Interlude\\[1em]
     \centerline{\decothreeleft\;\rotatebox[origin=c]{180}{\decothreeleft}}
-}}
+\end{frame}
+}
 
 \begin{document}
 \frame{\titlepage}
@@ -88,8 +93,8 @@
         \draw (.4, 0.15) node[above] (py09) {1991} -- (.4, -0.15);
         \node[above of=py09, xshift=1em] (start) {Python 0.9};
         \node[below left of=start, node distance=2em, anchor=west] {\em
-            \scriptsize Guido van Rossum, BDFL\footnote{BDFL: Benevolent dictator for
-                life} $\longrightarrow$ 2018};
+            \scriptsize Guido van Rossum, BDFL\footnote{BDFL: Benevolent Dictator For
+                Life} $\longrightarrow$ 2018};
         \draw (7.2, 0.15) node[above] (py30) {2008} -- (7.2, -0.15);
         \node[above of=py30, xshift=-2em, text width=6em] (py2630) {Python
             2.6 Python 3.0};
@@ -136,17 +141,85 @@
 
 \end{frame}
 
+\begin{frame}[fragile]{L'écosystème moderne}
+\begin{tikzpicture}[>=stealth']
+    \footnotesize
+    % 2020-2025 timeline with new tools
+
+    % Add PEP 518 note
+    \draw[->, semithick] (0, 0) -- (10, 0); % extend to 2024
+    \draw[->, semithick] (0, 0) -- (10, 0); % 0 -> 2020, 11 -> 2024, 1 = 1yr
+
+    \draw (0, 0.15) node[above] (pep518) {'16} --  (0, -0.15);
+    \draw (2, 0.15) node[above] (py37) {'18} --  (2, -0.15);
+    \draw (3, 0.15) node[above] (py38) {'19} --  (3, -0.15);
+    \draw (4, 0.15) node[above] (py39) {'20} --  (4, -0.15);
+    \draw (5, 0.15) node[above] (py310) {'21} -- (5, -0.15);
+    \draw (6, 0.15) node[above] (py311) {'22} -- (6, -0.15);
+    \draw (7, 0.15) node[above] (py312) {'23} -- (7, -0.15);
+    \draw (8, 0.15) node[above] (py313) {'24} -- (8, -0.15);
+    \draw (9, 0.15) node[above] (py314) {'25} -- (9, -0.15);
+
+    \node[above of=pep518, yshift=-.7em] (pep518-) {PEP518};
+    \node[below of=pep518-, yshift=-3em] {\scriptsize pyproject.toml};
+    \node[above of=py39, yshift=1.3em] (py39-) {py39};
+    \node[above of=py310, yshift=-.7em] (py310-) {py310};
+    \node[above of=py311, yshift=.3em] (py311-) {py311};
+    \node[above of=py312, yshift=1.3em] (py312-) {py312};
+    \node[above of=py313, yshift=-.7em] (py313-) {py313};
+    \node[above of=py314, yshift=.3em] (py314-) {py314};
+    \draw[dashed] (py39-) -- (py39);
+    \draw[dashed] (py310-) -- (py310);
+    \draw[dashed] (py311-) -- (py311);
+    \draw[dashed] (py312-) -- (py312);
+    \draw[dashed] (py313-) -- (py313);
+    \draw[dashed] (pep518-) -- (pep518);
+
+    % Tool timelines
+    \fill[red] (-1.5, -1.4) node[above, anchor=south west] {\scriptsize
+        Mypy (2012)\em \tiny --- J. Lehtosalo} rectangle (10, -1.45);
+
+    \fill[mDarkGreen] (2, -2) node[above, anchor=south west] {\scriptsize
+        Poetry \em \tiny --- S. Eustache} rectangle (10, -2.05);
+    
+    \fill[mLightBrown] (2, -2.6) node[above, anchor=south west] {\scriptsize
+        Maturin \em \tiny --- A. Ronacher} rectangle (10, -2.65);
+
+    \fill[mDarkTeal] (6, -3.2) node[above, anchor=south west] {\scriptsize
+        Ruff \em \tiny --- Astral} rectangle (10, -3.25);
+
+    \fill[mDarkTeal] (8, -3.8) node[above, anchor=south west] {\scriptsize
+        uv \em \tiny --- Astral} rectangle (10, -3.85);
+
+    \fill[mDarkTeal] (9, -4.4) node[above, anchor=south west] {\scriptsize
+        ty \em \tiny --- Astral} rectangle (10, -4.45);
+
+    \end{tikzpicture}
+\end{frame}
+
+% Add new slide after historique
+\begin{frame}{Python 3.13 - Nouveautés 2024}
+
+    \begin{itemize}
+        \item Amélioration des performances (15-20\% plus rapide)
+        \item Nouveau REPL interactif amélioré
+        \item Support expérimental du JIT (Just-In-Time compilation)
+        \item Amélioration du garbage collector
+        \item Suppression du GIL en version expérimentale
+    \end{itemize}
+\end{frame}
+
 \begin{frame}
     [fragile]{Les références}
-    Les références à garder à porter de souris:
+    Les références à garder à portée de souris:
     \begin{itemize}
         \tightlist
         \item le site officiel: \url{www.python.org};
         \item la documentation des \textit{core packages}:
               \url{docs.python.org};
         \item les PEP (Python Enhancement Proposals),\\ notamment le
-                  {PEP 8: \textit{Style Guide for Python Code}};
-        \item le {glossaire};
+                  PEP 8: \textit{Style Guide for Python Code};
+        \item le glossaire;
     \end{itemize}
 
     et d'une manière générale:
@@ -164,8 +237,8 @@
 \begin{frame}[fragile]{L'interpréteur Python}
 
     \begin{minted}[fontsize=\scriptsize]{text}
-Python 3.4.3 (default, Aug 11 2015, 08:57:25)
-[GCC 4.2.1 Compatible Apple LLVM 6.1.0 (clang-602.0.53)] on darwin
+Python 3.12.6 (main, Sep  6 2024, 10:03:22)
+[Clang 15.0.0 (clang-1500.3.9.4)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 \end{minted}
 
@@ -183,7 +256,9 @@ Type "help", "copyright", "credits" or "license" for more information.
     \mint[fontsize=\scriptsize]  {text}|hello y'all|
 \end{frame}
 
-\plain{Ouvrez votre interpréteur Python!}
+\begin{frame}[standout]
+Ouvrez votre interpréteur Python!
+\end{frame}
 
 \begin{frame}
     [fragile]{La fonction print}
@@ -761,6 +836,7 @@ ValueError: too many values to unpack (expected 2)
 
     \begin{alertblock}
         {Important!}
+        \vspace{.5em}
         La présentation d'une \alert{\underline{{interface}
                 \normalfont\color{black} claire, générique et
                 robuste}} est fondamentale.
@@ -770,7 +846,7 @@ ValueError: too many values to unpack (expected 2)
 \begin{frame}
     [fragile]{Les fonctions}
     \begin{minted} [fontsize=\scriptsize]{python3}
-def gcd(a, b):
+def gcd(a: int, b: int) -> int:
     """Computes the GCD of two positive integers.
 
     >>> gcd(12, 8)
@@ -787,6 +863,18 @@ def gcd(a, b):
             b = b - a
     return a
 \end{minted}
+\end{frame}
+
+\begin{frame}[fragile]{Les annotations de type}
+    \begin{itemize}
+        \item Les annotations de type sont optionnelles en Python.
+        \item Elles permettent d'améliorer la lisibilité du code.
+        \item Elles peuvent être utilisées par des outils externes de
+              vérification statique du code (type checkers).
+    \end{itemize}
+
+    Abusez-en!!
+
 \end{frame}
 
 \begin{frame}
@@ -843,7 +931,7 @@ TestResults(failed=0, attempted=2)
 
     \begin{minted} [fontsize=\scriptsize]{pycon}
 >>> import cmath
->>> def rotate(value, angle, radian=True):
+>>> def rotate(value: complex, angle: complex, radian: bool =True):
 ...     if not radian:
 ...         angle *= cmath.pi / 180.
 ...     return value * cmath.exp(angle*1j)
@@ -906,7 +994,7 @@ TestResults(failed=0, attempted=2)
     [fragile]{Les exceptions}
 
     \begin{minted} [fontsize=\scriptsize]{pycon}
->>> def check(value):
+>>> def check(value: int) -> None:
 ...     if (int (value) < 0):
 ...         raise ValueError("Cannot handle negative value (%s)" % (value))
 ...
@@ -923,7 +1011,7 @@ ValueError: Cannot handle negative value (-7)
 \begin{frame}
     [fragile]{Les exceptions}
     \begin{minted} [fontsize=\scriptsize]{pycon}
->>> def analyze(s):
+>>> def analyze(s: str) -> list[int]:
 ...     r = []
 ...     try:
 ...         vlist = s.split()
@@ -948,6 +1036,7 @@ The argument must be a string of space-separated int
     [fragile]{Les exceptions}
     \begin{alertblock}
         {Easier to Ask for Forgiveness than Permission (EAFP)}
+        \vspace{.5em}
         On suppose vraies les conditions nécessaires à l'exécution d'un code
         pour lever des exceptions si ces hypothèses se révèlent fausses.%\\[1em]
         \hfill {\footnotesize $\neq$\,\emph{Look Before You Leap (LBYP)}}
@@ -1131,10 +1220,10 @@ array([ 1.5,  3. ,  4.5,  6. ])
     [fragile]{L'interpréteur IPython}
 
     \begin{minted}[fontsize=\scriptsize]{text}
-Python 3.4.3 (default, Aug 11 2015, 08:57:25)
+Python 3.12.6 (default, Aug 11 2015, 08:57:25)
 Type "copyright", "credits" or "license" for more information.
 
-IPython 4.1.2 -- An enhanced Interactive Python.
+IPython 8.18.1 -- An enhanced Interactive Python.
 ?         -> Introduction and overview of IPython's features.
 %quickref -> Quick reference.
 help      -> Python's own help system.
@@ -1163,6 +1252,7 @@ In [2]: np.si
     \end{itemize}
 
     \begin{alertblock} {À retenir!}
+        \vspace{.5em}
         La commande \texttt{\%matplotlib inline} permet l'inclusion de figures
         produites par Matplotlib au sein du même document.
     \end{alertblock}
@@ -1177,12 +1267,12 @@ In [2]: np.si
     \begin{itemize}
         \item Présentation des modules NumPy et Matplotlib;
         \item Introduction à Pandas;
-        \item \url{https://github.com/ASPP/2021-bordeaux-dataviz}
+        \item \footnotesize\url{https://github.com/ASPP/2021-bordeaux-dataviz}
     \end{itemize}
 
     Ressources pour aller plus loin:
     \begin{itemize}
-        \item \url{https://github.com/rougier/scientific-visualization-book} (si publié)
+        \item \footnotesize\url{https://github.com/rougier/scientific-visualization-book} 
     \end{itemize}
 
 \end{frame}
@@ -1191,7 +1281,7 @@ In [2]: np.si
 \section{La bibliothèque standard Python}
 
 % Les modules / interfaces
-% - https://docs.python.org/3.9/library/index.html
+% - https://docs.python.org/3.13/library/index.html
 % - 6.2. re — Regular expression operations
 % - 8.1. datetime — Basic date and time types
 % - 8.2. calendar — General calendar-related functions
@@ -1219,7 +1309,7 @@ In [2]: np.si
         \item des bibliothèques d'utilitaires usuels;\\
               \mbox{}\hfill\PointingHand\quad {\em batteries included} \quad\mbox{}
     \end{itemize}
-    {\small \url{https://docs.python.org/3.9/library/index.html}}
+    {\small \url{https://docs.python.org/3.13/library/index.html}}
     \begin{minted} [fontsize=\footnotesize]{text}
 6.2. re — Regular expression operations
 8.1. datetime — Basic date and time types
@@ -1471,29 +1561,38 @@ list(enumerate(s))  # [(0, 0), (1, 1), (2, 4), (3, 9), (4, 16)]
 \end{frame}
 
 \begin{frame}
-    [fragile]{Itérateurs -- \texttt{zip}}
-    \texttt{zip} itère sur plusieurs séquences à la fois.
-    \begin{minted} [fontsize=\scriptsize]{python}
-x = [1, 2, 7, 4]
-y = [2*t+1 for t in x]
+    [fragile]{zip et enumerate}
 
-# anti-pattern
-length = min(len(x), len(y))
-l = []
-for i in range(length):
-    l.append((x[i], y[i]))
+    \texttt{zip} et \texttt{enumerate} sont des fonctions utiles pour l'itération:
 
-# préférer
-list(zip(x, y))  # [(1, 3), (2, 5), (7, 15), (4, 9)]
+    \begin{minted} [fontsize=\scriptsize]{pycon}
+>>> names = ['Alice', 'Bob', 'Charlie']
+>>> ages = [25, 30, 35]
+>>> scores = [85, 90, 78]
+
+# zip pour itérer sur plusieurs séquences
+>>> for name, age, score in zip(names, ages, scores):
+...     print(f"{name} ({age} ans): {score}/100")
+Alice (25 ans): 85/100
+Bob (30 ans): 90/100
+Charlie (35 ans): 78/100
+
+# enumerate pour obtenir l'index
+>>> for i, name in enumerate(names):
+...     print(f"Position {i}: {name}")
+Position 0: Alice
+Position 1: Bob
+Position 2: Charlie
 \end{minted}
-
 \end{frame}
 
+
 \begin{frame}
-    [fragile]{Itérateurs -- \texttt{enumerate} et \texttt{zip}}
+    [fragile]{Exercice}
 
     Trouver la paire d'éléments consécutifs d'une liste telle que leur
     différence en valeur absolue soit la plus grande de la liste.
+    \pause
 
     \begin{minted} [fontsize=\scriptsize]{pycon}
 >>> s = [1, 0, 3, 7, 2, 5, 8, 9, 4, 6]
@@ -1676,6 +1775,7 @@ True
     [fragile]{Le duck-typing}
     \begin{alertblock}
         {Le typage canard (\emph{duck-typing})}
+        \vspace{.5em}
         \emph{«S'il marche comme un canard et cancane comme un canard, alors
             c'est un canard!»}
     \end{alertblock}
@@ -2121,8 +2221,65 @@ len(Point())  # 3
 
 \end{frame}
 
+\begin{frame}
+    [fragile]{Les dataclasses}
+    
+    Les dataclasses simplifient la création de classes principalement utilisées pour stocker des données:
+    
+    \begin{minted} [fontsize=\scriptsize]{python3}
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: float
+    y: float
+    z: float = 0.0  # valeur par défaut
+
+# Équivalent à définir __init__, __repr__, __eq__ automatiquement
+p1 = Point(1.0, 2.0)
+p2 = Point(1.0, 2.0, 3.0)
+
+print(p1)  # Point(x=1.0, y=2.0, z=0.0)
+print(p1 == Point(1.0, 2.0))  # True
+\end{minted}
+\end{frame}
+
+\begin{frame}
+    [fragile]{Les dataclasses}
+    Avantages des dataclasses:
+    \begin{itemize}
+        \item Génération automatique de \texttt{\_\_init\_\_}, \texttt{\_\_repr\_\_}, \texttt{\_\_eq\_\_}
+        \item Support des annotations de type
+        \item Options: \texttt{frozen=True} pour l'immutabilité, \texttt{order=True} pour la comparaison
+        \item Attention aux champs mutables
+    \end{itemize}
+
+    \begin{minted} [fontsize=\scriptsize]{python3}
+    from dataclasses import dataclass, field
+
+    @dataclass(order=True)
+    class Personne:
+        name: str
+        siblings: list[Personne] = field(default_factory=list, compare=False)
+    \end{minted}
+
+\end{frame}
+
 
 \interlude
+
+\begin{frame}
+    [fragile]{Interlude}
+    \begin{itemize}
+        \item Créer une dataclass \texttt{Student} avec les attributs \texttt{name} (str), \texttt{age} (int) et \texttt{grades} (list[float]) avec une liste vide par défaut.
+        \item Ajouter une méthode \texttt{average} qui calcule la moyenne des notes.
+        \item Créer quelques étudiants et les trier par moyenne décroissante.
+    \end{itemize}
+\end{frame}
+
+\begin{frame} [fragile]{Interlude}
+    \inputminted[fontsize=\scriptsize]{python3}{code/interlude_03_0.py}
+\end{frame}
 
 \begin{frame}
     [fragile]{Interlude}
@@ -2155,7 +2312,10 @@ len(Point())  # 3
     \inputminted[firstline=28,fontsize=\scriptsize]{python3}{code/interlude_03_1.py}
 \end{frame}
 
-\plain{Reprenons\dots}
+
+\begin{frame}[standout]
+Reprenons\dots
+\end{frame}
 
 \begin{frame}
     [fragile]{Le cycle de vie de l'objet}
@@ -2304,6 +2464,7 @@ from math import pi, cos
 
     \begin{alertblock}
         {Important!}
+        \vspace{.5em}
         Chaque module n'est importé \alert{qu'une seule fois} par session.\\Si
         le module est changé, il faut redémarrer l'interpréteur.
     \end{alertblock}
@@ -2323,6 +2484,7 @@ from math import pi, cos
 
     \begin{alertblock}
         {Rappel}
+        \vspace{.5em}
         La présentation d'une \alert{\underline{{interface}
                 \normalfont\color{black} claire, générique et
                 robuste}} est fondamentale.
@@ -2354,23 +2516,23 @@ from math import pi, cos
 
 \begin{frame}
     [fragile]{Distribution}
+    Python propose maintenant \texttt{pyproject.toml} (PEP 518) comme standard 
+    moderne pour la configuration des projets, remplaçant \texttt{setup.py}.
 
-    Python propose \texttt{distutils} mais la Python Packaging Authority
-    maintient une alternative plus complète, \alert{\texttt{setuptools}}.
-
-    L'arborescence suivante est courante:
+    L'arborescence suivante est recommandée:
     \begin{minted} [fontsize=\scriptsize]{text}
-    geography.git/
-      - geography/
-        - __init__.py
-        - core.py
-        - geodesy.py
-        - projection.py
+    geography/
+      - src/
+        - geography/
+          - __init__.py
+          - core.py
+          - geodesy.py
+          - projection.py
       - tests/
-      - license.txt
-      - readme.txt
-      - setup.py
-\end{minted}
+      - LICENSE
+      - README.md
+      - pyproject.toml
+    \end{minted}
 \end{frame}
 
 \begin{frame}
@@ -2383,40 +2545,41 @@ from math import pi, cos
 import .core
 from ..foo import bar  # go up one directory
 \end{minted}
-        \item Le fichier \texttt{setup.py} décrit le module;
+        \item Le fichier \texttt{pyproject.toml} décrit le module;
         \item Construction, installation, distribution du \emph{paquet}:
-              \begin{minted} [fontsize=\scriptsize]{bash}
-python setup.py install  # build and install
-python setup.py install --prefix=/my/favourite/directory
-python setup.py bdist_wheel  # produce a distributable archive
-\end{minted}
+        \begin{minted} [fontsize=\scriptsize]{bash}
+uv sync                         # install dependencies
+uv build                        # build distributable package
+uv pip install dist/*.whl       # install from built wheel
+        \end{minted}
     \end{itemize}
 
 \end{frame}
 
 \begin{frame}
     [fragile]{Le fichier \texttt{setup.py}}
-    \begin{minted} [fontsize=\scriptsize]{python3}
-from setuptools import setup
+Le fichier \texttt{pyproject.toml} remplace \texttt{setup.py} comme standard moderne:
+    \begin{minted} [fontsize=\scriptsize]{toml}
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
-setup(name="geography",
-      version="0.1",
-      author="Xavier Olive,",
-      author_email="me@example.com",
-      description="A fantastic module for geography",
-      long_description=open("readme.txt").read(),
-      license="MIT",
-      packages=["geography", ],  # folder name
-      install_requires=["numpy>=1.4", ],
-      )
-\end{minted}
+[project]
+name = "geography"
+version = "0.1"
+authors = [{name = "Xavier Olive", email = "me@example.com"}]
+description = "A fantastic module for geography"
+readme = "README.md"
+license = {text = "MIT"}
+dependencies = ["numpy>=2.0"]
+    \end{minted}
 
 \end{frame}
 
 \begin{frame}
     [fragile]{Pip et PyPI}
     \begin{itemize}
-        \item Le site \url{https://pypi.python.org/pypi}\footnote{The Python
+        \item Le site \url{https://pypi.org/}\footnote{The Python
                   Package Index} recense des milliers de paquets.
         \item \texttt{pip}\footnote{Acronyme récursif pour «Pip Installs
                   Packages»} est un outil de gestion des paquets et dépendances:
@@ -2426,11 +2589,7 @@ pip uninstall numpy
 pip install numpy=1.9
 pip install -r requirements.txt
 \end{minted}
-        \item Notion d'environnement virtuel.
-              \begin{itemize}
-                  \item le paquet \texttt{\small virtualenv};
-                  \item les environnements virtuels dans Anaconda.
-              \end{itemize}
+        \item Le nouvel outil \texttt{uv} propose une gestion moderne des environnements:
     \end{itemize}
 \end{frame}
 
@@ -2506,6 +2665,27 @@ True
                   \item de créer une interface Python pour appeler du code écrit
                         dans un autre langage, via son API C/C++.
               \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    [fragile]{Bindings Rust}
+    \begin{itemize}
+        \item Rust offre d'excellentes performances et sécurité mémoire
+        \item De nombreux bibliothèques performantes sont disponibles en Rust
+        \item Plusieurs outils pour créer des bindings Python-Rust:
+              \begin{itemize}
+                  \item \textbf{PyO3}: Framework principal pour les extensions Python en Rust
+                  \item \textbf{maturin}: Outil de build et distribution (déjà mentionné dans l'historique)
+              \end{itemize}
+        \item Avantages par rapport à Cython:
+              \begin{itemize}
+                  \item Sécurité mémoire garantie
+                  \item Performance native
+                  \item Écosystème Rust moderne
+              \end{itemize}
+        \item Exemples d'usage: cryptographie, parsers, calculs intensifs
+        \item Outils célèbres: uv, ruff, etc.
     \end{itemize}
 \end{frame}
 
