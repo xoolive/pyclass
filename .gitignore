@@ -6,5 +6,5 @@
 _minted
 _minted-python
 
-.synctex.gz
-.xdv
+*.synctex.gz
+*.xdv
