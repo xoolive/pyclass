@@ -2,12 +2,16 @@
 title: La mesure du rayon de la Terre
 subtitle: Histoire de la cartographie
 author: Xavier Olive
-theme: utopia
+aspectratio: 169
+theme: metropolis
 lang: french
 mainlang: french
 polyglossia-lang:
   name: french
 header-includes:
+  - \metroset{numbering=fraction}
+  - \setmathfont[Scale=0.95]{Fira Math Light}
+  - \setmonofont[Scale=0.85]{Inconsolata}
   - \PassOptionsToPackage{usenames,dvipsnames}{xcolor}
   - \usetikzlibrary{shapes, shapes.misc}
   - \definecolor{mDarkGreen}{HTML}{239541}
@@ -77,7 +81,7 @@ $$\frac{a}{\sin \alpha} = \frac{b}{\sin \beta} =\frac{c}{\sin \gamma}$$
 
 ## Inō Tadataka (1745 -- 1818)
 
-1800 : Le shogun autorise Inō a réaliser une carte du pays avec son propre argent.
+1800 : Le shogun autorise Inō (55 ans) a réaliser une carte du pays avec son propre argent.
 
 1818 : Mort de Inō Tadataka.  
 Sa carte du Japon (échelle $1:216 000$) est alors inachevée.
@@ -85,6 +89,10 @@ Sa carte du Japon (échelle $1:216 000$) est alors inachevée.
 3 736 jours de mesure, 34 913 kilomètres parcourus
 
 Le _Tadataka-zu_ (Les cartes de Tadataka), dont beaucoup sont précises à 1/1000e de degré, sont restées les cartes en usage au Japon jusqu'en 1924.
+
+## Inō Tadataka (1745 -- 1818)
+
+![](img/tadataka.png)
 
 # La carte de France des Cassini
 
