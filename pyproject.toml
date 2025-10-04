@@ -1,0 +1,45 @@
+[project]
+name = "pyclass"
+version = "0.1.0"
+description = "Advanced and scientific Python"
+authors = [{ name = "Xavier Olive", email = "git@xoolive.org" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "jupyter",
+    "jupyterlab",
+    "pandas",
+    "scikit-learn",
+    "requests",
+    "tqdm",
+    "cartopy",
+    "shapely",
+    "aiohttp",
+    "rich",
+    "vpython",
+    "networkx",
+    "skyfield",
+    "zeep",
+    "traffic",
+    "flask",
+    "flask-cors",
+    "textual",
+    "waitress",
+    "ruff",
+    "mypy",
+    "pandas-stubs",
+    "fiona>=1.10.1,<1.11",
+    "geopandas>=1.0.1,<1.1",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
