@@ -1,7 +1,7 @@
 [project]
 name = "pyclass"
 version = "0.1.0"
-description = "Add a short description here"
+description = "Advanced and scientific Python"
 authors = ["Xavier Olive <git@xoolive.org>"]
 channels = ["conda-forge"]
 platforms = ["win-64", "linux-64", "osx-64", "osx-arm64"]
@@ -34,3 +34,7 @@ waitress = "*"
 ruff = "*"
 mypy = "*"
 pandas-stubs = "*"
+fiona = ">=1.10.1,<1.11"
+geopandas = ">=1.0.1,<1.1"
+libgfortran5 = ">=15.1.0,<16"
+libopenblas = ">=0.3.30,<0.4"
