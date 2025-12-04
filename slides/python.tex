@@ -181,7 +181,7 @@ Interlude\\[1em]
 
     \fill[mDarkGreen] (2, -2) node[above, anchor=south west] {\scriptsize
         Poetry \em \tiny --- S. Eustache} rectangle (10, -2.05);
-    
+
     \fill[mLightBrown] (2, -2.6) node[above, anchor=south west] {\scriptsize
         Maturin \em \tiny --- A. Ronacher} rectangle (10, -2.65);
 
@@ -791,7 +791,7 @@ dict_items([(1, ('Ain', 'Bourg-en-Bresse')), (2, ('Aisne', 'Laon'))])
 
 >>> e = {}
 >>> for key, value in d.items():
-...     e[("%02d" % key)] = value
+...     e[(f"{key:02d}"] = value
 >>> e
 {'02': ('Aisne', 'Laon'), '01': ('Ain', 'Bourg-en-Bresse')}
 
@@ -935,7 +935,7 @@ TestResults(failed=0, attempted=2)
 ...     if not radian:
 ...         angle *= cmath.pi / 180.
 ...     return value * cmath.exp(angle*1j)
-... 
+...
 >>> rotate(1+2j, cmath.pi/2)
 (-2+1.0000000000000002j)
 \end{minted}
@@ -996,7 +996,7 @@ TestResults(failed=0, attempted=2)
     \begin{minted} [fontsize=\scriptsize]{pycon}
 >>> def check(value: int) -> None:
 ...     if (int (value) < 0):
-...         raise ValueError("Cannot handle negative value (%s)" % (value))
+...         raise ValueError(f"Cannot handle negative value ({value})")
 ...
 >>> check(3)
 >>> check(-7)
@@ -1019,7 +1019,7 @@ ValueError: Cannot handle negative value (-7)
 ...              r.append(int(v))
 ...         return r
 ...     except ValueError as val:
-...         print("Python said: %s" % val)
+...         print(f"Python said: {val}")
 ...     except AttributeError:
 ...         print("The argument must be a string of space-separated int")
 ...
@@ -1156,7 +1156,7 @@ array([ 1.5,  3. ,  4.5,  6. ])
     Exemple de calcul des décimales de π (Monte-Carlo):
     \begin{minted} [fontsize=\scriptsize]{pycon}
 >>> import numpy as np
->>> size = 1e8
+>>> size = 100_000_000
 >>> positions = np.random.rand(size, 2)
 >>> x, y = positions[:, 0], positions[:, 1]  # memory views
 >>> x0, y0 = 0.5, 0.5
@@ -1272,7 +1272,7 @@ In [2]: np.si
 
     Ressources pour aller plus loin:
     \begin{itemize}
-        \item \footnotesize\url{https://github.com/rougier/scientific-visualization-book} 
+        \item \footnotesize\url{https://github.com/rougier/scientific-visualization-book}
     \end{itemize}
 
 \end{frame}
@@ -1376,7 +1376,7 @@ In [2]: np.si
 # Find all adverbs
 >>> text = "He was carefully disguised but captured quickly by police."
 >>> for m in re.finditer(r"\w+ly", text):
-...     print('%02d-%02d: %s' % (m.start(), m.end(), m.group(0)))
+...     print(f'{m.start():02d}-{m.end():02d}: {m.group(0)}')
 07-16: carefully
 40-47: quickly
 \end{minted}
@@ -2223,9 +2223,9 @@ len(Point())  # 3
 
 \begin{frame}
     [fragile]{Les dataclasses}
-    
+
     Les dataclasses simplifient la création de classes principalement utilisées pour stocker des données:
-    
+
     \begin{minted} [fontsize=\scriptsize]{python3}
 from dataclasses import dataclass
 
@@ -2516,7 +2516,7 @@ from math import pi, cos
 
 \begin{frame}
     [fragile]{Distribution}
-    Python propose maintenant \texttt{pyproject.toml} (PEP 518) comme standard 
+    Python propose maintenant \texttt{pyproject.toml} (PEP 518) comme standard
     moderne pour la configuration des projets, remplaçant \texttt{setup.py}.
 
     L'arborescence suivante est recommandée:
@@ -2616,11 +2616,11 @@ pip install -r requirements.txt
 ...         print("calling " + func.__name__)
 ...         return func(*args, **kwargs)
 ...     return func_wrapper
-... 
+...
 >>> @explicit_call
 ... def is_positive(number):
 ...     return number > 0
-... 
+...
 >>> is_positive(4)
 calling is_positive
 True

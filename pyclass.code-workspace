@@ -1,13 +1,17 @@
 {
-  "folders": [{ "path": "." }],
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
   "settings": {
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
-
     "editor.formatOnSave": true,
-    "mypy.extraArguments": ["--ignore-missing-import"],
+    "mypy.extraArguments": [
+      "--ignore-missing-import"
+    ],
     "ruff.importStrategy": "fromEnvironment",
-
     "[python]": {
       "files.insertFinalNewline": true,
       "editor.defaultFormatter": "charliermarsh.ruff",
@@ -16,15 +20,12 @@
         "source.fixAll.ruff": "never"
       }
     },
-
     // Settings for Windows
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
-
     "[markdown]": {
       "editor.wordWrap": "bounded",
       "editor.wordWrapColumn": 120
     },
-
     "files.exclude": {
       "**/.git/": true,
       "**/.ipynb_checkpoints/": true,
@@ -58,7 +59,9 @@
     "recommendations": [
       "ms-python.python",
       "ms-python.mypy-type-checker",
-      "charliermarsh.ruff"
+      "charliermarsh.ruff",
+      "ms-toolsai.datawrangler",
+      "ms-toolsai.jupyter"
     ]
   }
 }
