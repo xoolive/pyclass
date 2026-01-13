@@ -77,3 +77,17 @@ Some of the materials offered here is directly taken from the book
 [Programmation Python avancée](https://www.xoolive.org/python/).
 
 The book (in French) is neither required nor really necessary for the seminar; it however brings a lot of advanced complementary materials for the curious reader.
+
+
+# Troubleshooting
+
+## vpython
+
+downgrade to older versions: 
+```
+pip install notebook==6.1.5
+pip install vpython==7.6.1
+
+#if jupyter-notebook is still not working : 
+pip install --upgrade 'jupyter-server<2.0.0'
+```
