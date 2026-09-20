@@ -1,17 +1,17 @@
 ---
 layout: default
-title: Understand the difference between pip and conda
+title: Understand Python dependencies
 permalink: /dependencies
 ---
 
 ## Managing Python dependencies
 
-Python dependency management is a serious topic, as you want to be able to:
+Python dependency management is a serious topic, as you want to:
 
-- be able to reproduce code behaviour on your computer;
-- have other users (and your favourite teacher) reproduce the behaviour you got on their computer.
+- reproduce code behaviour on your computer;
+- let other users (and your favourite teacher) reproduce that behaviour on their computer.
 
-During your classes (and future professional life), your most common need will be to import libraries which are not necessarily installed by default, and on computers where you do not necessarily have administrator rights.
+During your classes (and future professional life), your most common need will be to import libraries which are not installed by default, often on computers where you do not have administrator rights.
 
 ### The `import` instruction
 
@@ -40,69 +40,74 @@ Try running in your Python interpreter:
 ]
 ```
 
-This is just an exemple with the default Python interpreter shipped with Ubuntu 20.04, and the result will probably be different for you.
-What is important here is to note that the order of import resolution will proceed as follow:
+This is just an example with the default Python interpreter shipped with Ubuntu, and the result will probably be different for you. What is important here is the order of import resolution:
 
 - first look at the current directory;
-- directories set in the `PYTHONPATH` environment variables come next  
-  (between `''` and `'/usr/lib/python312.zip'` in the current example);
-- in the system folders mentioned above;
-- a private home folder with no required administrator rights, but **it may not appear on your side**.
+- directories set in the `PYTHONPATH` environment variable come next;
+- then look in the system folders;
+- finally, perhaps in a private home folder with no required administrator rights.
 
 <div class="alert alert-warning">
-<b>Warning</b> &nbsp;&nbsp; When external dynamic libraries (mostly written in C or C++) need to be loaded, other folders are watched, depending on your operating systems. The <code>LD_LIBRARY_PATH</code> variable lets you extend the list of folders to check.
+<b>Warning</b> &nbsp;&nbsp; When external dynamic libraries (mostly written in C or C++) need to be loaded, other folders are watched, depending on your operating system. The <code>LD_LIBRARY_PATH</code> variable lets you extend the list of folders to check.
 </div>
 
 ### Managing dependencies with `pip`
 
-Dealing with dependencies in custom folders does not scale well. Some people like to extend the `sys.path` folder programmatically, but in most cases it is a poor idea.
+`pip` is the standard Python package installer. It downloads packages and their Python dependencies from [PyPI](https://pypi.org/), or installs a package from a local folder, for example with `pip install .`.
 
-`pip` is an excellent tool provided to install packages (and their dependencies!) from:
+Installing packages directly into the Python provided by your operating system, or with `pip install --user`, is inconvenient: packages for unrelated projects can conflict and it is difficult to reproduce a working installation later. A virtual environment avoids that problem by keeping each project's Python packages separate.
 
-- local folders, most of the time with `pip install .` ;
-- remote servers, like [https://pypi.org/](https://pypi.org/), with commands like `pip install pandas`.
+### Managing the course environment with `uv`
 
-`pip` installs packages in system folders first, but you can use the `--user` option to install in local folders. Remember `'/home/xo/.local/lib/python3.12/site-packages'`. It is important to ensure that such folder where `pip` installs packages is part of your Python `sys.path` list of folders, but `pip` will warn you if that's not the case.
+[`uv`](https://docs.astral.sh/uv/) manages Python versions, virtual environments and packages. For this course, the project configuration is in `pyproject.toml` and the exact resolved dependency versions are recorded in `uv.lock`.
 
-`pip` installs only Python dependencies. Publishing a package on PyPI (out of the scope of this seminar) is pretty flexible. Also, it does not ensure the global consistency of the Python ecosystem you have installed on your computer, which can become problematic when you install, update, deinstall, reinstall a lot of packages. **It is very likely that you will reach a point where your Python is "broken" because of dependency requirement conflicts.**
+After cloning the repository, create or update the environment from its lockfile:
 
-<img class="giphy" src="https://media.giphy.com/media/F7yLXA5fJ5sLC/giphy.webp"/>
+```sh
+uv sync --locked
+```
 
-A common solution is to use virtual environments to avoid such issue. It is possible to use those without Anaconda, but since Anaconda solves other dependency problems as well, let's move to that topic.
+This creates a virtual environment in `.venv`. The `--locked` option ensures that everyone uses the versions recorded for the course rather than silently choosing newer ones.
 
-### The Anaconda suite
+You usually do not need to activate this environment. Prefix a command with `uv run` instead:
 
-You should already have installed Anaconda by now. Anaconda is a distribution providing Python with a number of optional libraries, tools and their dependencies. Where `pip` is only focused on Python dependencies and requires **YOU** to provide other non Python dependencies, Anaconda lets you install other dependencies compiled in C, C++, R or more. Moreover, the global consistency in versions of dependencies is consistently enforced.
+```sh
+uv run python python/numpy_demo.py
+uv run jupyter lab
+```
 
-You may then install any missing package as follows:
+In Visual Studio Code, select the interpreter located in `.venv` when prompted. The Jupyter extension will then use the same packages as the terminal.
 
-```text
+If you maintain your own project, use `uv add` to add a dependency. It updates both `pyproject.toml` and `uv.lock`:
+
+```sh
+uv add pandas
+```
+
+Do not use `uv add` in this course repository unless you intend to change its shared environment.
+
+## Appendix: Conda, Mamba and Pixi
+
+Older versions of this course used the Conda ecosystem. These tools remain useful references, especially for projects that depend on non-Python system libraries, but they are not required for this course.
+
+### Conda and Mamba
+
+[Anaconda](https://www.anaconda.com/) is a Python distribution, and `conda` manages environments and packages from channels such as `conda-forge`. For example:
+
+```sh
 conda install pandas
 ```
 
-<div class="alert alert-success">
-<b>Good practice</b> &nbsp;&nbsp; The dependency resolution mechanism is rather slow with <code>conda</code>. If you have administrator rights on your computer, we recommend that you install a faster implementation called <code>mamba</code>:
-
-<pre style="margin-top: 1em; margin-bottom: -.5em;"><code>conda install -c conda-forge -n base mamba</code></pre>
-</div>
-
-<div class="alert alert-danger">
-<b>Warning</b> &nbsp;&nbsp; It is still possible to <span style="text-decoration: line-through">$*@</span> break your environment when you start <code>pip install</code>ing libraries in your Anaconda environment as versions of dependencies are no longer enforced.
-</div>
-
-The `conda-forge` channel is very comprehensive, and even more strict about consistency of your environment, which is why we recommend that you set the following options once for all.
+`mamba` is a faster compatible implementation of Conda's dependency solver:
 
 ```sh
-conda config --add channels conda-forge
+conda install -c conda-forge -n base mamba
 ```
 
-In addition to this strict mechanism, it is considered good practice to work in custom environments. A `conda` environment sets a specific Python version with chosen dependencies:
-
-- If anything breaks one day, you can just remove the environment and create a new one;
-- You can have several Python versions for the same project, and segregate environments for different projects.
+Conda environments keep a Python version and its selected dependencies together, so a broken environment can be removed and recreated without affecting other projects.
 
 ### Pixi
 
-Pixi is a tool that simplifies and makes conda environment management faster and more efficient.
+[Pixi](https://pixi.sh/) is a project-oriented tool built around Conda packages and environments. The repository still contains `pixi.toml` and `pixi.lock` as a fallback for maintainers, but the student instructions use `uv`.
 
 [↑ Home](.)

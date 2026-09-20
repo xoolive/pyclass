@@ -11,11 +11,10 @@ You have two options to open the `list_comprehensions.ipynb` file (in the `noteb
 - with Jupyter Lab: open a terminal and enter the following commands:
 
   ```bash
-  conda activate pyclass
-  jupyter lab
+  uv run jupyter lab
   ```
 
-- with Visual Studio Code: open the notebook as a regular file. If asked, specify you need to use the `pyclass` environment.
+- with Visual Studio Code: open the notebook as a regular file. If asked, select the `.venv` environment.
 
 ## Exercices using list comprehensions and iterators
 

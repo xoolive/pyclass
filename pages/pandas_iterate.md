@@ -11,10 +11,9 @@ You have two options to open the `pandas_iterate.ipynb` file (in the `notebooks/
 - with Jupyter Lab: open a terminal and enter the following commands:
 
   ```bash
-  conda activate pyclass
-  jupyter lab
+  uv run jupyter lab
   ```
 
-- with Visual Studio Code: open the notebook as a regular file. If asked, specify you need to use the `pyclass` environment.
+- with Visual Studio Code: open the notebook as a regular file. If asked, select the `.venv` environment.
 
 [↑ Home](.) \| [>> Next](pandas_oo)

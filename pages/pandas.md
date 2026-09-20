@@ -15,10 +15,9 @@ Vous pouvez ouvrir le notebook:
 - avec Jupyter Lab: ouvrez un terminal et entrez les commandes suivantes:
 
   ```bash
-  conda activate pyclass
-  jupyter lab
+  uv run jupyter lab
   ```
 
-- dans Visual Studio Code: ouvrez le notebook comme un fichier classique. Si besoin, spécifiez à nouveau que vous utilisez l'environnement `pyclass`.
+- dans Visual Studio Code: ouvrez le notebook comme un fichier classique. Si besoin, sélectionnez l'environnement `.venv`.
 
 [↑ Home](.)

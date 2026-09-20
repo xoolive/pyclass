@@ -26,7 +26,7 @@ A first experience in programming is preferable. This course does not focus on b
 |              | **Set up your environment**                                              |
 | ------------ | ------------------------------------------------------------------------ |
 | 🏠           | [Set up a basic running environment](pages/setup.md)                     |
-| _(optional)_ | [Understand the difference between pip and conda](pages/dependencies.md) |
+| _(optional)_ | [Understand Python dependencies](pages/dependencies.md)                 |
 |              | **Basic Python**                                                         |
 |              | [Basic data structures](pages/basic.md)                                  |
 |              | [Basic programming](pages/exercices.md)                                  |
@@ -53,7 +53,7 @@ A first experience in programming is preferable. This course does not focus on b
 |              | [Solving puzzles](pages/puzzles.md)                                      |
 |              | [Trajectography of the ISS](space_station)                               |
 |              | [Satellite visualization](labs/satellites/)                              |
-|              | [Data visualization of collected ADS-B signals](labs/adsb/dump1090.md)   |
+|              | [Data visualization of collected ADS-B signals](labs/adsb/jet1090.md)    |
 
 ## Disclaimer
 
