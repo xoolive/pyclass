@@ -53,6 +53,9 @@
       "titleBar.inactiveBackground": "#f2918899",
       "titleBar.inactiveForeground": "#15202b99"
     },
+    "github.copilot.enable": {
+      "python": false,
+    },
     "peacock.color": "#f29188"
   },
   "extensions": {

@@ -18,10 +18,9 @@ You will need to set up **by yourself** the following pieces:
 - Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) to manage the Python environment. Follow the installation instructions for your operating system.
 
 - understand that you will need a terminal for cloning learning materials, installing dependencies and more.
-
   - MacOS and Linux users should be familiar with their usual terminal application;
   - MacOS users will probably need to install common tools and dependencies with [brew](https://brew.sh/);
-  - Windows users should use **PowerShell**. The course commands (`uv sync --locked`, `uv run ...`, and Git commands) also work in Command Prompt (`cmd.exe`), but the `uv` installation instructions use PowerShell. In Visual Studio Code, choose **Terminal > New Terminal** and select the PowerShell profile if needed.
+  - Windows users should use **PowerShell**. The course commands (`uv`, Git commands) also work in Command Prompt (`cmd.exe`), but the `uv` installation instructions use PowerShell. In Visual Studio Code, choose **Terminal > New Terminal** and select the PowerShell profile if needed.
 
   You are expected to be familiar with the most basic shell commands to list a directory, create and move files, change permissions, etc.
 

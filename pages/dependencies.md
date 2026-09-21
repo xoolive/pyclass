@@ -72,8 +72,8 @@ This creates a virtual environment in `.venv`. The `--locked` option ensures tha
 You usually do not need to activate this environment. Prefix a command with `uv run` instead:
 
 ```sh
-uv run python python/numpy_demo.py
-uv run jupyter lab
+uv run python my_test_file.py
+uv run jupyter notebook
 ```
 
 In Visual Studio Code, select the interpreter located in `.venv` when prompted. The Jupyter extension will then use the same packages as the terminal.
