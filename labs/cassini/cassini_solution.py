@@ -50,7 +50,7 @@ distances["Sig.Nord", "Sig.Sud"] = 7928 + 5 / 6
 # Méridienne de l'Observatoire de 11°58′28″ »
 
 
-with open("data/triangles.txt", "r") as fh:  # fh = open("...", "r")
+with open("data/triangles.txt", "r", encoding="utf8") as fh:  # fh = open("...", "r")
     cumul = []
     i = -1
     #    for i, line in enumerate(fh.readlines()):
@@ -58,10 +58,7 @@ with open("data/triangles.txt", "r") as fh:  # fh = open("...", "r")
         i += 1
         if i % 4 != 3:
             city, deg, mn, sec = (
-                line.replace("°", " ")
-                .replace("′", " ")
-                .replace("″", " ")
-                .split()
+                line.replace("°", " ").replace("′", " ").replace("″", " ").split()
             )
             cumul.append(
                 (
@@ -73,16 +70,14 @@ with open("data/triangles.txt", "r") as fh:  # fh = open("...", "r")
         else:
             (a, alpha), (b, beta), (c, gamma) = cumul
             distances[a, c] = distances[a, b] * math.sin(beta) / math.sin(gamma)
-            distances[b, c] = (
-                distances[a, b] * math.sin(alpha) / math.sin(gamma)
-            )
+            distances[b, c] = distances[a, b] * math.sin(alpha) / math.sin(gamma)
 
             cumul.clear()
 
 
 total_distance = 0
 
-with open("data/inclinaisons.txt", "r") as fh:
+with open("data/inclinaisons.txt", "r", encoding="utf8") as fh:
     for line in fh.readlines():
         line = line.strip()
         if len(line) == 0:
@@ -96,7 +91,7 @@ with open("data/inclinaisons.txt", "r") as fh:
 
 angles = [
     2 + 11 / 60 + 50 / 3600 + 17 / (60**3),
-    1 + 47 / 60 + 7 / 3600 + 20 / (60**3),
+    1 + 45 / 60 + 7 / 3600 + 20 / (60**3),
     2 + 43 / 60 + 51 / 3600 + 5 / (60**3),
     1 + 39 / 60 + 11 / 3600 + 12 / (60**3),
 ]
